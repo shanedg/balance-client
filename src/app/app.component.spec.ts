@@ -1,10 +1,44 @@
 import { TestBed, async } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  ReactiveFormsModule,
+  // FormsModule
+} from '@angular/forms';
+import {
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatIconModule,
+  MatDividerModule,
+  MatTableModule,
+  MatButtonModule
+} from '@angular/material';
+
 import { AppComponent } from './app.component';
+import { QuickAddComponent } from './quick-add/quick-add.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      // app libraries need to be imported
+      imports: [
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        // FormsModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatDividerModule,
+        MatTableModule,
+        MatButtonModule
+      ],
+      // app components need to be declared
       declarations: [
-        AppComponent
+        AppComponent,
+        QuickAddComponent,
+        TransactionsComponent
       ],
     }).compileComponents();
   }));
@@ -22,6 +56,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to balance!');
+    expect(compiled.querySelector('h1').textContent).toContain('balance');
   }));
 });

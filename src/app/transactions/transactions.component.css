@@ -1,0 +1,7 @@
+.transactions table {
+  width: 100%;
+}
+
+.transactions table td {
+  text-align: left;
+}
