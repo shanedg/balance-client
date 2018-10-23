@@ -6,7 +6,9 @@ import {
 } from '@angular/core';
 import {
   FormGroup,
-  FormControl
+  FormControl,
+  Validators,
+  NgForm
 } from '@angular/forms';
 import { Transaction } from '../transaction';
 
@@ -19,9 +21,22 @@ export class QuickAddComponent implements OnInit {
 
   // Form controls
   newTransaction = new FormGroup({
-    value: new FormControl(''),
-    description: new FormControl(''),
-    date: new FormControl('')
+    value: new FormControl(null, {
+      validators: [
+        Validators.required,
+        Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)
+      ]
+    }),
+    description: new FormControl(null, {
+      validators: [
+        Validators.required
+      ]
+    }),
+    date: new FormControl(null, {
+      validators: [
+        Validators.required
+      ]
+    })
   });
 
   constructor() { }
@@ -29,21 +44,28 @@ export class QuickAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Send expense submissions up and out to parent.
+  // Send transaction submissions up and out to parent.
   @Output() transactionAddedEvent = new EventEmitter<Transaction>();
 
   /*
-   * Expense details form submit.
+   * Transaction details form submit.
    */
-  onSubmit() {
-    const transaction = {
-      // TODO: settle on transaction id convention
-      id: 0,
-      value: this.newTransaction.value.value,
-      description: this.newTransaction.value.description,
-      date: this.newTransaction.value.date.toLocaleDateString()
-    };
-    this.transactionAddedEvent.emit(transaction);
+  onSubmit(formEl: NgForm) {
+    if (!this.newTransaction.invalid) {
+      
+      const transaction = {
+        // TODO: settle on transaction id convention
+        id: 0,
+        value: this.newTransaction.value.value,
+        description: this.newTransaction.value.description,
+        date: this.newTransaction.value.date.toLocaleDateString()
+      };
+      this.transactionAddedEvent.emit(transaction);
+      
+      // TODO: the call to reset() is superfluous, I think only need resetForm()
+      this.newTransaction.reset();
+      formEl.resetForm();
+    }
   }
 
 }
