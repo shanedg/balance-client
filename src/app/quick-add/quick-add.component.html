@@ -1,18 +1,18 @@
 <div class="quick-add">
   <h3>quick add</h3>
-  <form class="quick-add-form" [formGroup]="newTransaction" (ngSubmit)="onSubmit()">
+  <form class="quick-add-form" [formGroup]="newTransaction" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
     <mat-form-field>
-      <mat-label>Expense value</mat-label>
-      <input matInput placeholder="Expense value" value="" formControlName="value">
+      <mat-label>Transaction value</mat-label>
+      <input matInput placeholder="Transaction value" value="" formControlName="value">
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Expense description</mat-label>
-      <input matInput placeholder="Expense description" value="" formControlName="description">
+      <mat-label>Transaction description</mat-label>
+      <input matInput placeholder="Transaction description" value="" formControlName="description">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput [matDatepicker]="transactionDatePick" placeholder="Expense date" formControlName="date">
+      <input matInput [matDatepicker]="transactionDatePick" placeholder="Transaction date" formControlName="date">
       <mat-datepicker-toggle matSuffix [for]="transactionDatePick"></mat-datepicker-toggle>
       <mat-datepicker #transactionDatePick></mat-datepicker>
     </mat-form-field>
