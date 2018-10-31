@@ -21,7 +21,7 @@ export class QuickAddComponent implements OnInit {
 
   // Form controls
   newTransaction = new FormGroup({
-    value: new FormControl(null, {
+    amount: new FormControl(null, {
       validators: [
         Validators.required,
         Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)
@@ -56,7 +56,7 @@ export class QuickAddComponent implements OnInit {
       const transaction = {
         // TODO: settle on transaction id convention
         id: 0,
-        value: this.newTransaction.value.value,
+        amount: this.newTransaction.value.amount,
         description: this.newTransaction.value.description,
         date: this.newTransaction.value.date.toLocaleDateString()
       };
