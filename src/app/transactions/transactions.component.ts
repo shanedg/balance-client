@@ -16,7 +16,7 @@ export class TransactionsComponent implements OnChanges {
 
   @Input() transactions:Transaction[];
   transactionTableSource = new MatTableDataSource(this.transactions);
-  transactionsColumns: string[] = ['id', 'description', 'value', 'date'];
+  transactionsColumns: string[] = ['id', 'description', 'amount', 'date'];
 
   constructor() { }
 
