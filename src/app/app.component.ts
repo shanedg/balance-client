@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private transactionsService: TransactionsService) { }
 
   ngOnInit() {
-    this.transactions = [].concat(this.transactionsService.getTransactions());
+    this.transactionsService.getTransactions()
+      .subscribe(transactions => this.transactions = [].concat(transactions));
   }
 
   // TODO: strategy around adding transactions via service
