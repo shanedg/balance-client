@@ -1,24 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Transaction } from './transaction';
+import { Account } from './account';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TransactionsService {
+export class AccountsService {
   baseURL = 'http://localhost';
   port = '1337';
-  path = '/transactions';
+  path = '/accounts';
 
   constructor(private http: HttpClient) { }
 
-  // TODO: strategy around adding transactions via service
-  // and what triggers update to ui.
-
-  getTransactions() {
+  getAccounts() {
     const endpoint = this.baseURL + ((this.port == null || this.port == '') ? '' : `:${this.port}`) + this.path;
-    console.log('transactions endpoint:', endpoint);
+    console.log('accounts endpoint:', endpoint);
     return this.http.get(endpoint);
   }
 }

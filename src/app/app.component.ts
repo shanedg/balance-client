@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionsService } from './transactions.service';
 import { Transaction } from './transaction';
+import { Account } from './account';
+import { AccountsService } from './accounts.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +12,22 @@ import { Transaction } from './transaction';
 export class AppComponent implements OnInit {
   title = 'balance';
   transactions:Transaction[];
+  accounts:Account[];
 
-  constructor(private transactionsService: TransactionsService) { }
+  constructor(private transactionsService: TransactionsService, private accountsService: AccountsService) { }
 
   ngOnInit() {
     this.transactionsService.getTransactions()
-      .subscribe(transactions => this.transactions = [].concat(transactions));
+      .subscribe(transactions => {
+        this.transactions = [].concat(transactions);
+        console.log('transactions:', this.transactions);
+      });
+    this.accountsService.getAccounts()
+      .subscribe(accounts => {
+        this.accounts = [].concat(accounts);
+        console.log('accounts:', this.accounts);
+      });
+    
   }
 
   // TODO: strategy around adding transactions via service
