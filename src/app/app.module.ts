@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import {
   ReactiveFormsModule
 } from '@angular/forms';
+import {
+  HttpClientModule
+} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatInputModule,
@@ -26,6 +29,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
