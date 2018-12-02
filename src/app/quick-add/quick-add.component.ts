@@ -56,9 +56,15 @@ export class QuickAddComponent implements OnInit {
       const transaction = {
         // TODO: settle on transaction id convention
         id: 0,
+        name: '',
         amount: this.newTransaction.value.amount,
-        description: this.newTransaction.value.description,
-        date: this.newTransaction.value.date.toLocaleDateString()
+        details: this.newTransaction.value.description,
+        due: this.newTransaction.value.date.toLocaleDateString(),
+        scheduled: this.newTransaction.value.date.toLocaleDateString(),
+        effective: this.newTransaction.value.date.toLocaleDateString(),
+        fromAccount: null,
+        toAccount: null,
+        bucket: null
       };
       this.transactionAddedEvent.emit(transaction);
       
