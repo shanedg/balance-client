@@ -10,6 +10,8 @@ import {
   Validators,
   NgForm
 } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material';
+
 import { Transaction } from '../transaction';
 
 @Component({
@@ -23,36 +25,74 @@ export class QuickAddComponent implements OnInit {
   newTransaction = new FormGroup({
     name: new FormControl(null, {
       validators: [
-        Validators.required
       ]
     }),
     amount: new FormControl(null, {
       validators: [
-        Validators.required,
         Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)
       ]
     }),
     details: new FormControl(null, {
       validators: [
-        Validators.required
       ]
     }),
     due: new FormControl(null, {
       validators: [
-        Validators.required
+        // Validators.pattern(/^\d+\/\d+\/\d+$/)
       ]
     }),
     scheduled: new FormControl(null, {
       validators: [
-        Validators.required
+        // Validators.pattern(/^\d+\/\d+\/\d+$/)
       ]
     }),
     effective: new FormControl(null, {
       validators: [
-        Validators.required
+        // Validators.pattern(/^\d+\/\d+\/\d+$/)
       ]
-    })
+    }),
+    fromAccount: new FormControl(null, {
+      validators: [
+      ]
+    }),
+    toAccount: new FormControl(null, {
+      validators: [
+      ]
+    }),
+    bucket: new FormControl(null, {
+      validators: [
+      ]
+    }),
   });
+
+  initialAddValues = [
+    {
+      id: null,
+      name: null,
+      amount: null,
+      details: null,
+      due: null,
+      scheduled: null,
+      effective: null,
+      fromAccount: null,
+      toAccount: null,
+      bucket: null,
+    },
+  ];
+  quickAddTableSource = new MatTableDataSource(this.initialAddValues);
+
+  quickAddColumns: string[] = [
+    // 'id',
+    'name',
+    'amount',
+    'details',
+    'due',
+    'scheduled',
+    'effective',
+    'fromAccount',
+    'toAccount',
+    'bucket',
+  ];
 
   constructor() { }
 
@@ -69,21 +109,20 @@ export class QuickAddComponent implements OnInit {
     if (!this.newTransaction.invalid) {
       
       const transaction = {
-        // TODO: settle on transaction id convention
-        id: 0,
-        name: this.newTransaction.value.name,
-        amount: this.newTransaction.value.amount,
-        details: this.newTransaction.value.details,
-        due: this.newTransaction.value.due.toLocaleDateString(),
-        scheduled: this.newTransaction.value.scheduled.toLocaleDateString(),
-        effective: this.newTransaction.value.effective.toLocaleDateString(),
-        fromAccount: null,
-        toAccount: null,
-        bucket: null
+        id: -1, // from cms
+        name: this.newTransaction.value.name || null,
+        amount: this.newTransaction.value.amount || null,
+        details: this.newTransaction.value.details || null,
+        due: this.newTransaction.value.due ? this.newTransaction.value.due.toLocaleDateString() : null,
+        scheduled: this.newTransaction.value.scheduled ? this.newTransaction.value.scheduled.toLocaleDateString() : null,
+        effective: this.newTransaction.value.effective ? this.newTransaction.value.effective.toLocaleDateString() : null,
+        fromAccount: this.newTransaction.value.fromAccount || null,
+        toAccount: this.newTransaction.value.toAccount || null,
+        bucket: this.newTransaction.value.bucket || null
       };
       this.transactionAddedEvent.emit(transaction);
       
-      // TODO: the call to reset() is superfluous, I think only need resetForm()
+      // TODO: the call to reset() is likely superfluous, I think only need resetForm()
       this.newTransaction.reset();
       formEl.resetForm();
     }

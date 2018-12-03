@@ -5,6 +5,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+
 import { Transaction } from '../transaction';
 
 @Component({

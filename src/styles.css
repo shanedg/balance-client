@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* ugh i am forever looking up how to inject custom styles into angular material components and spending the next forty-five minutes reading documentation on every single way to this can be accomplished and then forgetting what i was doing in the first place */
+.quick-add .mat-form-field-infix {
+  width: 100%;
+}
