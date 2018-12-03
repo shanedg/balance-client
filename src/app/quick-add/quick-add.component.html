@@ -1,24 +1,31 @@
 <div class="quick-add">
   <h3>quick add</h3>
   <form class="quick-add-form" [formGroup]="newTransaction" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
     <mat-form-field>
-      <mat-label>Transaction amount</mat-label>
-      <input matInput placeholder="Transaction amount" value="" formControlName="amount">
+      <mat-label>name</mat-label>
+      <input matInput placeholder="name" value="" formControlName="name">
+      <mat-error *ngIf="newTransaction.controls.name.invalid">Required*</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>amount</mat-label>
+      <input matInput placeholder="amount" value="" formControlName="amount">
       <span matPrefix>$&nbsp;</span>
       <mat-error *ngIf="newTransaction.controls.amount.invalid">Required, must be valid amount*</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Transaction description</mat-label>
-      <input matInput placeholder="Transaction description" value="" formControlName="description">
-      <mat-error *ngIf="newTransaction.controls.description.invalid">Required*</mat-error>
+      <mat-label>details</mat-label>
+      <input matInput placeholder="details" value="" formControlName="details">
+      <mat-error *ngIf="newTransaction.controls.details.invalid">Required*</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput [matDatepicker]="transactionDatePick" placeholder="Transaction date" formControlName="date">
+      <input matInput [matDatepicker]="transactionDatePick" placeholder="due" formControlName="due">
       <mat-datepicker-toggle matSuffix [for]="transactionDatePick"></mat-datepicker-toggle>
       <mat-datepicker #transactionDatePick></mat-datepicker>
-      <mat-error *ngIf="newTransaction.controls.date.invalid">Required, must be MM/DD/YYYY*</mat-error>
+      <mat-error *ngIf="newTransaction.controls.due.invalid">Required, must be MM/DD/YYYY*</mat-error>
     </mat-form-field>
 
     <button mat-raised-button>add</button>
