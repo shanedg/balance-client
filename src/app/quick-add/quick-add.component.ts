@@ -54,6 +54,19 @@ export class QuickAddComponent implements OnInit {
     })
   });
 
+  quickAddColumns: string[] = [
+    // 'id',
+    'name',
+    // 'amount',
+    // 'details',
+    // 'due',
+    // 'scheduled',
+    // 'effective',
+    // 'fromAccount',
+    // 'toAccount',
+    // 'bucket',
+  ];
+
   constructor() { }
 
   ngOnInit() {
