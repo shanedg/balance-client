@@ -27,6 +27,9 @@ export class QuickAddComponent implements OnInit {
   // Receive accounts list from parent.
   @Input() accounts:Account[];
 
+  // Receive buckets list from parent.
+  @Input() buckets:Account[];
+
   // Send transaction submissions up and out to parent.
   @Output() transactionAddedEvent = new EventEmitter<Transaction>();
 
@@ -113,6 +116,8 @@ export class QuickAddComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnChanges .. acccounts:', this.accounts);
+    console.log('ngOnChanges .. buckets:', this.buckets);
+
   }
 
   /*
@@ -131,7 +136,7 @@ export class QuickAddComponent implements OnInit {
         effective: this.newTransaction.value.effective ? this.newTransaction.value.effective.toLocaleDateString() : null,
         fromAccount: this.newTransaction.value.fromAccount ? this.getAccount(this.newTransaction.value.fromAccount) : null,
         toAccount: this.newTransaction.value.toAccount ? this.getAccount(this.newTransaction.value.toAccount) : null,
-        bucket: this.newTransaction.value.bucket || null
+        bucket: this.newTransaction.value.bucket ? this.getBucket(this.newTransaction.value.bucket) : null,
       };
       
       console.log('emit transaction:', transaction);
@@ -157,4 +162,17 @@ export class QuickAddComponent implements OnInit {
     return account;
   }
 
+  /*
+   * Map bucket name string back to Bucket-shaped object.
+   */
+  getBucket(name: string) {
+    let bucket = null;
+    this.buckets.forEach(item => {
+      if (item.name == name) {
+        bucket = item;
+        return;
+      }
+    });
+    return bucket;
+  }
 }

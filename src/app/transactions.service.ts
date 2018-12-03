@@ -18,7 +18,6 @@ export class TransactionsService {
 
   getTransactions() {
     const endpoint = this.baseURL + ((this.port == null || this.port == '') ? '' : `:${this.port}`) + this.path;
-    console.log('transactions endpoint:', endpoint);
     return this.http.get(endpoint);
   }
 }

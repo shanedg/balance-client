@@ -108,7 +108,11 @@
           <td mat-cell *matCellDef="let element">
             <mat-form-field>
               <mat-label>bucket</mat-label>
-              <input matInput placeholder="bucket" value="" formControlName="bucket">
+              <!-- <input matInput placeholder="bucket" value="" formControlName="bucket"> -->
+              <select matNativeControl formControlName="bucket">
+                <option value="null">placeholder</option>
+                <option *ngFor="let option of buckets" [value]="option.name">{{ option.name }}</option>
+              </select>
             </mat-form-field>
           </td>
         </ng-container>
