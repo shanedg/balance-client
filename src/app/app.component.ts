@@ -20,12 +20,10 @@ export class AppComponent implements OnInit {
     this.transactionsService.getTransactions()
       .subscribe(transactions => {
         this.transactions = [].concat(transactions);
-        console.log('transactions:', this.transactions);
       });
     this.accountsService.getAccounts()
       .subscribe(accounts => {
         this.accounts = [].concat(accounts);
-        console.log('accounts:', this.accounts);
       });
   }
 

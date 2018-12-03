@@ -80,7 +80,11 @@
           <td mat-cell *matCellDef="let element">
             <mat-form-field>
               <mat-label>fromAccount</mat-label>
-              <input matInput placeholder="fromAccount" value="" formControlName="fromAccount">
+              <!-- <input matInput placeholder="fromAccount" value="" formControlName="fromAccount"> -->
+              <select matNativeControl formControlName="fromAccount">
+                <option value="null">placeholder</option>
+                <option *ngFor="let option of accounts" [value]="option.name">{{ option.name }}</option>
+              </select>
             </mat-form-field>
           </td>
         </ng-container>
@@ -90,7 +94,11 @@
           <td mat-cell *matCellDef="let element">
             <mat-form-field>
               <mat-label>toAccount</mat-label>
-              <input matInput placeholder="toAccount" value="" formControlName="toAccount">
+              <!-- <input matInput placeholder="toAccount" value="" formControlName="toAccount"> -->
+              <select matNativeControl formControlName="toAccount">
+                <option value="null">placeholder</option>
+                <option *ngFor="let option of accounts" [value]="option.name">{{ option.name }}</option>
+              </select>
             </mat-form-field>
           </td>
         </ng-container>
