@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Account } from './account';
-
 @Injectable({
   providedIn: 'root'
 })
-export class AccountsService {
+export class BucketsService {
   baseURL = 'http://localhost';
   port = '1337';
-  path = '/accounts';
+  path = '/buckets';
 
   constructor(private http: HttpClient) { }
 
-  getAccounts() {
+  getBuckets() {
     const endpoint = this.baseURL + ((this.port == null || this.port == '') ? '' : `:${this.port}`) + this.path;
     return this.http.get(endpoint);
   }

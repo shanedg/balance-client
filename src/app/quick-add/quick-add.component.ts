@@ -1,8 +1,10 @@
 import {
   Component,
+  Input,
   OnInit,
   Output,
-  EventEmitter
+  EventEmitter, 
+  SimpleChanges
 } from '@angular/core';
 import {
   FormGroup,
@@ -13,6 +15,7 @@ import {
 import { MatTableDataSource } from '@angular/material';
 
 import { Transaction } from '../transaction';
+import { Account } from '../account';
 
 @Component({
   selector: 'app-quick-add',
@@ -20,6 +23,15 @@ import { Transaction } from '../transaction';
   styleUrls: ['./quick-add.component.css']
 })
 export class QuickAddComponent implements OnInit {
+
+  // Receive accounts list from parent.
+  @Input() accounts:Account[];
+
+  // Receive buckets list from parent.
+  @Input() buckets:Account[];
+
+  // Send transaction submissions up and out to parent.
+  @Output() transactionAddedEvent = new EventEmitter<Transaction>();
 
   // Form controls
   newTransaction = new FormGroup({
@@ -38,16 +50,19 @@ export class QuickAddComponent implements OnInit {
     }),
     due: new FormControl(null, {
       validators: [
+        // TODO: date validation didn't seem to work with this regexp
         // Validators.pattern(/^\d+\/\d+\/\d+$/)
       ]
     }),
     scheduled: new FormControl(null, {
       validators: [
+        // TODO: date validation didn't seem to work with this regexp
         // Validators.pattern(/^\d+\/\d+\/\d+$/)
       ]
     }),
     effective: new FormControl(null, {
       validators: [
+        // TODO: date validation didn't seem to work with this regexp
         // Validators.pattern(/^\d+\/\d+\/\d+$/)
       ]
     }),
@@ -82,7 +97,7 @@ export class QuickAddComponent implements OnInit {
   quickAddTableSource = new MatTableDataSource(this.initialAddValues);
 
   quickAddColumns: string[] = [
-    // 'id',
+    // 'id', // from cms, we don't want to create this ourselves
     'name',
     'amount',
     'details',
@@ -99,8 +114,11 @@ export class QuickAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Send transaction submissions up and out to parent.
-  @Output() transactionAddedEvent = new EventEmitter<Transaction>();
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges .. acccounts:', this.accounts);
+    console.log('ngOnChanges .. buckets:', this.buckets);
+
+  }
 
   /*
    * Transaction details form submit.
@@ -109,17 +127,19 @@ export class QuickAddComponent implements OnInit {
     if (!this.newTransaction.invalid) {
       
       const transaction = {
-        id: -1, // from cms
+        id: -1, // from cms, treat this -1 as a sentinel value
         name: this.newTransaction.value.name || null,
         amount: this.newTransaction.value.amount || null,
         details: this.newTransaction.value.details || null,
         due: this.newTransaction.value.due ? this.newTransaction.value.due.toLocaleDateString() : null,
         scheduled: this.newTransaction.value.scheduled ? this.newTransaction.value.scheduled.toLocaleDateString() : null,
         effective: this.newTransaction.value.effective ? this.newTransaction.value.effective.toLocaleDateString() : null,
-        fromAccount: this.newTransaction.value.fromAccount || null,
-        toAccount: this.newTransaction.value.toAccount || null,
-        bucket: this.newTransaction.value.bucket || null
+        fromAccount: this.newTransaction.value.fromAccount ? this.getAccount(this.newTransaction.value.fromAccount) : null,
+        toAccount: this.newTransaction.value.toAccount ? this.getAccount(this.newTransaction.value.toAccount) : null,
+        bucket: this.newTransaction.value.bucket ? this.getBucket(this.newTransaction.value.bucket) : null,
       };
+      
+      console.log('emit transaction:', transaction);
       this.transactionAddedEvent.emit(transaction);
       
       // TODO: the call to reset() is likely superfluous, I think only need resetForm()
@@ -128,4 +148,31 @@ export class QuickAddComponent implements OnInit {
     }
   }
 
+  /*
+   * Map account name string back to Account-shaped object.
+   */
+  getAccount(name: string) {
+    let account = null;
+    this.accounts.forEach(item => {
+      if (item.name == name) {
+        account = item;
+        return;
+      }
+    });
+    return account;
+  }
+
+  /*
+   * Map bucket name string back to Bucket-shaped object.
+   */
+  getBucket(name: string) {
+    let bucket = null;
+    this.buckets.forEach(item => {
+      if (item.name == name) {
+        bucket = item;
+        return;
+      }
+    });
+    return bucket;
+  }
 }
