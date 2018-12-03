@@ -1,5 +1,5 @@
 export class Transaction {
-  id: number;
+  id: number; // from cms
   name: string;
   amount: number;
   details: string;

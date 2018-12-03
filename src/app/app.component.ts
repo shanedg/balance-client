@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
         this.accounts = [].concat(accounts);
         console.log('accounts:', this.accounts);
       });
-    
   }
 
   // TODO: strategy around adding transactions via service

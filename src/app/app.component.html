@@ -2,9 +2,7 @@
   <h1>
     {{ title }}
   </h1>
-  <mat-divider></mat-divider>
   <app-quick-add (transactionAddedEvent)="receiveNewTransaction($event)"></app-quick-add>
   <!-- <mat-icon>attach_money</mat-icon> -->
-  <mat-divider></mat-divider>
   <app-transactions [transactions]="transactions"></app-transactions>
 </div>
