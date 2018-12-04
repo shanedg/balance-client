@@ -115,9 +115,6 @@ export class QuickAddComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges .. acccounts:', this.accounts);
-    console.log('ngOnChanges .. buckets:', this.buckets);
-
   }
 
   /*
@@ -138,7 +135,7 @@ export class QuickAddComponent implements OnInit {
         toAccount: this.newTransaction.value.toAccount ? this.getAccount(this.newTransaction.value.toAccount) : null,
         bucket: this.newTransaction.value.bucket ? this.getBucket(this.newTransaction.value.bucket) : null,
       };
-      
+
       console.log('emit transaction:', transaction);
       this.transactionAddedEvent.emit(transaction);
       
