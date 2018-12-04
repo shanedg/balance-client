@@ -2,8 +2,10 @@ import { TestBed, async } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   ReactiveFormsModule,
-  // FormsModule
 } from '@angular/forms';
+import {
+  HttpClientModule,
+} from '@angular/common/http';
 import {
   MatInputModule,
   MatDatepickerModule,
@@ -11,7 +13,7 @@ import {
   MatIconModule,
   MatDividerModule,
   MatTableModule,
-  MatButtonModule
+  MatButtonModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -21,24 +23,24 @@ import { TransactionsComponent } from './transactions/transactions.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      // app libraries need to be imported
+      // app modules need to be imported
       imports: [
         BrowserAnimationsModule,
         ReactiveFormsModule,
-        // FormsModule,
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
         MatIconModule,
         MatDividerModule,
         MatTableModule,
-        MatButtonModule
+        MatButtonModule,
+        HttpClientModule,
       ],
       // app components need to be declared
       declarations: [
         AppComponent,
         QuickAddComponent,
-        TransactionsComponent
+        TransactionsComponent,
       ],
     }).compileComponents();
   }));
