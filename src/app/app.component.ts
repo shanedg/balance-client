@@ -12,12 +12,14 @@ import { BucketsService } from './buckets.service';
 })
 export class AppComponent implements OnInit {
   title = 'balance';
-  transactions:Transaction[];
-  accounts:Account[];
+  transactions: Transaction[];
+  accounts: Account[];
   // TODO: buckets ts type once we figure out what buckets needs/does
-  buckets:any[];
+  buckets: any[];
 
-  constructor(private transactionsService: TransactionsService, private accountsService: AccountsService, private bucketsService: BucketsService) { }
+  constructor(private transactionsService: TransactionsService,
+    private accountsService: AccountsService,
+    private bucketsService: BucketsService) { }
 
   ngOnInit() {
     // get all transactions on init
@@ -36,7 +38,7 @@ export class AppComponent implements OnInit {
     this.bucketsService.getBuckets()
       .subscribe(buckets => {
         this.buckets = [].concat(buckets);
-      })
+      });
   }
 
   /*

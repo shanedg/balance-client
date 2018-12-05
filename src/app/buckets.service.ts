@@ -12,7 +12,7 @@ export class BucketsService {
   constructor(private http: HttpClient) { }
 
   getBuckets() {
-    const endpoint = this.baseURL + ((this.port == null || this.port == '') ? '' : `:${this.port}`) + this.path;
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + this.path;
     return this.http.get(endpoint);
   }
 }
