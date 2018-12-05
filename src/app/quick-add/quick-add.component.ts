@@ -3,7 +3,7 @@ import {
   Input,
   OnInit,
   Output,
-  EventEmitter, 
+  EventEmitter,
   SimpleChanges
 } from '@angular/core';
 import {
@@ -25,10 +25,10 @@ import { Account } from '../account';
 export class QuickAddComponent implements OnInit {
 
   // Receive accounts list from parent.
-  @Input() accounts:Account[];
+  @Input() accounts: Account[];
 
   // Receive buckets list from parent.
-  @Input() buckets:Account[];
+  @Input() buckets: Account[];
 
   // Send transaction submissions up and out to parent.
   @Output() transactionAddedEvent = new EventEmitter<PendingTransaction>();
@@ -114,15 +114,12 @@ export class QuickAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-  }
-
   /*
    * Transaction details form submit.
    */
   onSubmit(formEl: NgForm) {
     if (!this.newTransaction.invalid) {
-      
+
       const transaction = {
         // id: -1, // from cms, treat this -1 as a sentinel value
         name: this.newTransaction.value.name || null,
@@ -138,7 +135,7 @@ export class QuickAddComponent implements OnInit {
 
       console.log('emit transaction:', transaction);
       this.transactionAddedEvent.emit(transaction);
-      
+
       // TODO: the call to reset() is likely superfluous, I think only need resetForm()
       this.newTransaction.reset();
       formEl.resetForm();
@@ -151,7 +148,7 @@ export class QuickAddComponent implements OnInit {
   getAccount(name: string) {
     let account = null;
     this.accounts.forEach(item => {
-      if (item.name == name) {
+      if (item.name === name) {
         account = item;
         return;
       }
@@ -165,7 +162,7 @@ export class QuickAddComponent implements OnInit {
   getBucket(name: string) {
     let bucket = null;
     this.buckets.forEach(item => {
-      if (item.name == name) {
+      if (item.name === name) {
         bucket = item;
         return;
       }

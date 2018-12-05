@@ -30,10 +30,10 @@ export class TransactionsService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
 
   createTransaction(newTrans: PendingTransaction) {
-    const endpoint = this.baseURL + ((this.port == null || this.port == '') ? '' : `:${this.port}`) + this.path;
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + this.path;
     const httpOptions = {
       // TODO: headers to eventually provide authentication...
       // headers: new HttpHeaders({
@@ -47,7 +47,7 @@ export class TransactionsService {
   }
 
   getTransactions() {
-    const endpoint = this.baseURL + ((this.port == null || this.port == '') ? '' : `:${this.port}`) + this.path;
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + this.path;
     return this.http.get(endpoint);
   }
 }
