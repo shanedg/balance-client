@@ -14,7 +14,7 @@ import {
 } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 
-import { Transaction } from '../transaction';
+import { Transaction, PendingTransaction } from '../transaction';
 import { Account } from '../account';
 
 @Component({
@@ -31,7 +31,7 @@ export class QuickAddComponent implements OnInit {
   @Input() buckets:Account[];
 
   // Send transaction submissions up and out to parent.
-  @Output() transactionAddedEvent = new EventEmitter<Transaction>();
+  @Output() transactionAddedEvent = new EventEmitter<PendingTransaction>();
 
   // Form controls
   newTransaction = new FormGroup({
@@ -124,7 +124,7 @@ export class QuickAddComponent implements OnInit {
     if (!this.newTransaction.invalid) {
       
       const transaction = {
-        id: -1, // from cms, treat this -1 as a sentinel value
+        // id: -1, // from cms, treat this -1 as a sentinel value
         name: this.newTransaction.value.name || null,
         amount: this.newTransaction.value.amount || null,
         details: this.newTransaction.value.details || null,

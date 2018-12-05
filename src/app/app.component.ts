@@ -20,27 +20,37 @@ export class AppComponent implements OnInit {
   constructor(private transactionsService: TransactionsService, private accountsService: AccountsService, private bucketsService: BucketsService) { }
 
   ngOnInit() {
+    // get all transactions on init
     this.transactionsService.getTransactions()
       .subscribe(transactions => {
         this.transactions = [].concat(transactions);
       });
+
+    // get all accounts
     this.accountsService.getAccounts()
       .subscribe(accounts => {
         this.accounts = [].concat(accounts);
       });
+
+    // get all buckets
     this.bucketsService.getBuckets()
       .subscribe(buckets => {
         this.buckets = [].concat(buckets);
       })
   }
 
-  // TODO: strategy around adding transactions via service
-  // and what triggers update to ui.
+  /*
+   * Pass new transaction object to service and subscribe
+   * to result.
+   */
   receiveNewTransaction($event) {
-    /*
-     * Treat  `this.transactions` as immutable so that this change
-     * triggers `ngOnChanges` in children that receive it.
-     */
-    this.transactions = this.transactions.concat($event);
+    this.transactionsService.createTransaction($event)
+      .subscribe(newTrans => {
+        /*
+         * Treat  `this.transactions` as immutable so that this change
+         * triggers `ngOnChanges` in children that receive it.
+         */
+        this.transactions = this.transactions.concat(newTrans);
+      });
   }
 }
