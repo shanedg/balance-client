@@ -52,4 +52,40 @@ export class AppComponent implements OnInit {
         this.transactions = this.transactions.concat(newTrans);
       });
   }
+
+  /*
+   * Pass updated transaction object to service and subscribe
+   * to result.
+   */
+  receiveUpdatedTransaction($event) {
+    this.endpointService.update('/transactions/', $event.id, $event)
+      .subscribe(newTrans => {
+        /*
+         * Treat `this.transactions` as immutable so that this change
+         * triggers `ngOnChanges` in children that receive it.
+         */
+
+        let priorIndex;
+        let i;
+        const limit = this.transactions.length;
+        for (i = 0; i < limit; i++) {
+          if (this.transactions[i].id === $event.id) {
+            priorIndex = i;
+            break;
+          }
+        }
+
+        if (priorIndex === 0) {
+          const after = this.transactions.slice(1);
+          this.transactions = [$event].concat(after);
+        } else if (priorIndex === (limit - 1)) {
+          const before = this.transactions.slice(0, (limit - 1));
+          this.transactions = before.concat($event);
+        } else {
+          const before = this.transactions.slice(0, priorIndex);
+          const after = this.transactions.slice((priorIndex + 1));
+          this.transactions = before.concat($event).concat(after);
+        }
+      });
+  }
 }

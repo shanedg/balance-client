@@ -133,7 +133,6 @@ export class QuickAddComponent implements OnInit {
         bucket: this.newTransaction.value.bucket ? this.getBucket(this.newTransaction.value.bucket) : null,
       };
 
-      console.log('emit transaction:', transaction);
       this.transactionAddedEvent.emit(transaction);
 
       // TODO: the call to reset() is likely superfluous, I think only need resetForm()
