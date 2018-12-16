@@ -48,12 +48,12 @@ export class AppComponent implements OnInit {
    */
   receiveNewTransaction($event) {
     this.endpointService.create('/transactions/', $event)
-      .subscribe(newTrans => {
+      .subscribe(newTransaction => {
         /*
          * Treat  `this.transactions` as immutable so that this change
          * triggers `ngOnChanges` in children that receive it.
          */
-        this.transactions = this.transactions.concat(newTrans);
+        this.transactions = this.transactions.concat(newTransaction);
       });
   }
 
@@ -63,17 +63,25 @@ export class AppComponent implements OnInit {
    */
   receiveUpdatedTransaction($event) {
     this.endpointService.update('/transactions/', $event.id, $event)
-      .subscribe(newTrans => {
+      .subscribe(updatedTransaction => {
         /*
          * Treat `this.transactions` as immutable so that this change
          * triggers `ngOnChanges` in children that receive it.
          */
 
+        /*
+         * Re-insert updated transaction at the correct location in
+         * the transactions array...tho this only preserves the ordering
+         * until the next client reload...might be unnecessary if client
+         * just defaults to order transactions by `id`, since cms sends
+         * in order of last modified...also an O(n) operation in the
+         * worst case so if it can go, get rid of it
+         */
         let priorIndex;
         let i;
         const limit = this.transactions.length;
         for (i = 0; i < limit; i++) {
-          if (this.transactions[i].id === $event.id) {
+          if (this.transactions[i].id === updatedTransaction.id) {
             priorIndex = i;
             break;
           }
@@ -81,14 +89,14 @@ export class AppComponent implements OnInit {
 
         if (priorIndex === 0) {
           const after = this.transactions.slice(1);
-          this.transactions = [$event].concat(after);
+          this.transactions = [updatedTransaction].concat(after);
         } else if (priorIndex === (limit - 1)) {
           const before = this.transactions.slice(0, (limit - 1));
-          this.transactions = before.concat($event);
+          this.transactions = before.concat(updatedTransaction);
         } else {
           const before = this.transactions.slice(0, priorIndex);
           const after = this.transactions.slice((priorIndex + 1));
-          this.transactions = before.concat($event).concat(after);
+          this.transactions = before.concat(updatedTransaction).concat(after);
         }
       });
   }
