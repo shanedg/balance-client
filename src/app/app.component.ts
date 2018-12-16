@@ -27,14 +27,14 @@ export class AppComponent implements OnInit {
 
     // get all accounts
     this.endpointService.readAll('/accounts/')
-      .subscribe(transactions => {
-        this.transactions = [].concat(transactions);
+      .subscribe(accounts => {
+        this.accounts = [].concat(accounts);
       });
 
     // get all buckets
     this.endpointService.readAll('/buckets/')
-      .subscribe(transactions => {
-        this.transactions = [].concat(transactions);
+      .subscribe(buckets => {
+        this.buckets = [].concat(buckets);
       });
   }
 
