@@ -59,7 +59,7 @@ export class EndpointService {
       // TODO: headers to eventually provide authentication...
     };
 
-    return this.http.post<any>(endpoint, newNoun, httpOptions)
+    return this.http.put<any>(endpoint, newNoun, httpOptions)
       .pipe(catchError(this.handleError));
   }
 }
