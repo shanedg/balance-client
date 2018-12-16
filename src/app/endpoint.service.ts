@@ -3,15 +3,12 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-import { Transaction, PendingTransaction } from './transaction';
-
 @Injectable({
   providedIn: 'root'
 })
-export class TransactionsService {
+export class EndpointService {
   baseURL = 'http://localhost';
   port = '1337';
-  path = '/transactions';
 
   constructor(private http: HttpClient) { }
 
@@ -32,8 +29,8 @@ export class TransactionsService {
       'Something bad happened; please try again later.');
   }
 
-  createTransaction(newTrans: PendingTransaction) {
-    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + this.path;
+  create(path: string, newNoun: any) {
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + path;
     const httpOptions = {
       // TODO: headers to eventually provide authentication...
       // headers: new HttpHeaders({
@@ -42,12 +39,27 @@ export class TransactionsService {
       // })
     };
 
-    return this.http.post<any>(endpoint, newTrans, httpOptions)
+    return this.http.post<any>(endpoint, newNoun, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
-  getTransactions() {
-    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + this.path;
+  readAll(path: string) {
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + path;
     return this.http.get(endpoint);
+  }
+
+  read(path: string, id: number) {
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + path + id + '/';
+    return this.http.get(endpoint);
+  }
+
+  update(path: string, id: number, newNoun: any) {
+    const endpoint = this.baseURL + ((this.port == null || this.port === '') ? '' : `:${this.port}`) + path + id + '/';
+    const httpOptions = {
+      // TODO: headers to eventually provide authentication...
+    };
+
+    return this.http.post<any>(endpoint, newNoun, httpOptions)
+      .pipe(catchError(this.handleError));
   }
 }
