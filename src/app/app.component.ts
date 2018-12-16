@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TransactionsService } from './transactions.service';
 import { Transaction } from './transaction';
 import { Account } from './account';
-import { AccountsService } from './accounts.service';
-import { BucketsService } from './buckets.service';
+
+import { EndpointService } from './endpoint.service';
 
 @Component({
   selector: 'app-root',
@@ -17,27 +16,25 @@ export class AppComponent implements OnInit {
   // TODO: buckets ts type once we figure out what buckets needs/does
   buckets: any[];
 
-  constructor(private transactionsService: TransactionsService,
-    private accountsService: AccountsService,
-    private bucketsService: BucketsService) { }
+  constructor(private endpointService: EndpointService) { }
 
   ngOnInit() {
-    // get all transactions on init
-    this.transactionsService.getTransactions()
+    // get all transactions
+    this.endpointService.readAll('/transactions/')
       .subscribe(transactions => {
         this.transactions = [].concat(transactions);
       });
 
     // get all accounts
-    this.accountsService.getAccounts()
-      .subscribe(accounts => {
-        this.accounts = [].concat(accounts);
+    this.endpointService.readAll('/accounts/')
+      .subscribe(transactions => {
+        this.transactions = [].concat(transactions);
       });
 
     // get all buckets
-    this.bucketsService.getBuckets()
-      .subscribe(buckets => {
-        this.buckets = [].concat(buckets);
+    this.endpointService.readAll('/buckets/')
+      .subscribe(transactions => {
+        this.transactions = [].concat(transactions);
       });
   }
 
@@ -46,7 +43,7 @@ export class AppComponent implements OnInit {
    * to result.
    */
   receiveNewTransaction($event) {
-    this.transactionsService.createTransaction($event)
+    this.endpointService.create('/transactions/', $event)
       .subscribe(newTrans => {
         /*
          * Treat  `this.transactions` as immutable so that this change
