@@ -14,8 +14,12 @@ import {
 } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 
-import { Transaction, PendingTransaction } from '../transaction';
-import { Account } from '../account';
+import {
+  Account,
+  Bucket,
+  PendingTransaction,
+  Transaction,
+} from '../app.types';
 
 @Component({
   selector: 'app-quick-add',
@@ -28,7 +32,7 @@ export class QuickAddComponent implements OnInit {
   @Input() accounts: Account[];
 
   // Receive buckets list from parent.
-  @Input() buckets: Account[];
+  @Input() buckets: Bucket[];
 
   // Send transaction submissions up and out to parent.
   @Output() transactionAddedEvent = new EventEmitter<PendingTransaction>();
