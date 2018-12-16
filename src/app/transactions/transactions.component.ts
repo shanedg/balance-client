@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 
-import { Transaction } from '../transaction';
+import { Transaction } from '../app.types';
 
 @Component({
   selector: 'app-transactions',

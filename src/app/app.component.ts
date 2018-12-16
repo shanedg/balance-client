@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Transaction } from './transaction';
-import { Account } from './account';
+
+import {
+  Account,
+  Bucket,
+  PendingTransaction,
+  Transaction,
+} from './app.types';
 
 import { EndpointService } from './endpoint.service';
 
@@ -13,8 +18,7 @@ export class AppComponent implements OnInit {
   title = 'balance';
   transactions: Transaction[];
   accounts: Account[];
-  // TODO: buckets ts type once we figure out what buckets needs/does
-  buckets: any[];
+  buckets: Bucket[];
 
   constructor(private endpointService: EndpointService) { }
 
