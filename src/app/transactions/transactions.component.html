@@ -71,9 +71,16 @@
     <!-- TODO: use expandable row pattern to accomplish in-line editing? -->
     <ng-container matColumnDef="expanded">
       <!-- <th mat-header-cell *matHeaderCellDef> test header </th> -->
-      <td mat-cell *matCellDef="let expanded" colspan="10">
-        test test test
+      <td mat-cell *matCellDef="let row" colspan="10">
         <!-- TODO: jam app-edit-row in here?? -->
+        <app-edit-row
+          [accounts]="accounts"
+          [buckets]="buckets"
+          [editForm]="row.formControl"
+          [editColumns]="singletonColumns"
+          [editTableSource]="row.tableSource"
+          (transactionEditEvent)="receiveEditTransaction($event)"
+        ></app-edit-row>
       </td>
     </ng-container>
   
