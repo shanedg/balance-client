@@ -1,13 +1,3 @@
-/* .quick-add-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mat-form-field {
-  min-width: 60%;
-} */
-
 .quick-add {
   display: block;
   width: 100%;
@@ -18,8 +8,6 @@
   width: 100%;
   text-align: right;
 }
-
-
 
 .quick-add table {
   width: 100%;
