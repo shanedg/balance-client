@@ -1,12 +1,14 @@
 <div class="quick-add">
   <h3>quick add</h3>
     <div class="quick-add-form">
-      <app-edit-row [editForm]="newTransaction"
-                  [quickAddTableSource]="quickAddTableSource"
-                  [quickAddColumns]="quickAddColumns"
-                  [buckets]="buckets"
-                  [accounts]="accounts"
-                  (transactionEditEvent)="receiveEditTransaction($event)"></app-edit-row>
+      <app-edit-row
+        [accounts]="accounts"
+        [buckets]="buckets"
+        [editForm]="newTransaction"
+        [editColumns]="quickAddColumns"
+        [editTableSource]="quickAddTableSource"
+        (transactionEditEvent)="receiveEditTransaction($event)"
+      ></app-edit-row>
 
   </div>
 </div>

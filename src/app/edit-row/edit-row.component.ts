@@ -26,17 +26,18 @@ import {
 })
 export class EditRowComponent implements OnInit {
 
+  // Accounts and Buckets list from parent.
+  @Input() accounts: Account[];
+  @Input() buckets: Bucket[];
+
+  // Table columns from parent.
+  @Input() editColumns: string[];
+
   // Receive form group from parent.
   @Input() editForm: FormGroup;
 
   // quickAddTableSource = new MatTableDataSource(this.values);
-  @Input() quickAddTableSource: MatTableDataSource<any>;
-
-  // table columns from parent (?))
-  @Input() quickAddColumns: string[];
-
-  @Input() buckets: Bucket[];
-  @Input() accounts: Account[];
+  @Input() editTableSource: MatTableDataSource<any>;
 
   // Send transaction submissions up and out to parent.
   @Output() transactionEditEvent = new EventEmitter<PendingTransaction>();
