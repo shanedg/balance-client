@@ -1,124 +1,14 @@
 <div class="quick-add">
   <h3>quick add</h3>
-  <form class="quick-add-form" [formGroup]="newTransaction" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+    <div class="quick-add-form">
+      <app-edit-row
+        [accounts]="accounts"
+        [buckets]="buckets"
+        [editForm]="newTransaction"
+        [editColumns]="quickAddColumns"
+        [editTableSource]="quickAddTableSource"
+        (transactionEditEvent)="receiveEditTransaction($event)"
+      ></app-edit-row>
 
-    <table mat-table [dataSource]="quickAddTableSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> name </th>
-        <td mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <mat-label>name</mat-label>
-            <input matInput placeholder="name" value="" formControlName="name">
-            <mat-error *ngIf="newTransaction.controls.name.invalid">Required*</mat-error>
-          </mat-form-field>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="amount">
-        <th mat-header-cell *matHeaderCellDef> amount </th>
-        <td mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <mat-label>amount</mat-label>
-            <input matInput placeholder="amount" value="" formControlName="amount">
-            <span matPrefix>$&nbsp;</span>
-            <mat-error *ngIf="newTransaction.controls.amount.invalid">Must be valid decimal, USD*</mat-error>
-          </mat-form-field>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="details">
-        <th mat-header-cell *matHeaderCellDef> details </th>
-        <td mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <mat-label>details</mat-label>
-            <input matInput placeholder="details" value="" formControlName="details">
-          </mat-form-field>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="due">
-          <th mat-header-cell *matHeaderCellDef> due </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-form-field>
-              <mat-label>due</mat-label>
-              <input matInput [matDatepicker]="transactionDatePick" placeholder="" formControlName="due">
-              <mat-datepicker-toggle matSuffix [for]="transactionDatePick"></mat-datepicker-toggle>
-              <mat-datepicker #transactionDatePick></mat-datepicker>
-              <mat-error *ngIf="newTransaction.controls.due.invalid">Must be MM/DD/YYYY*</mat-error>
-            </mat-form-field>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="scheduled">
-          <th mat-header-cell *matHeaderCellDef> scheduled </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-form-field>
-                <mat-label>scheduled</mat-label>
-                <input matInput [matDatepicker]="transactionDatePick" placeholder="" formControlName="scheduled">
-                <mat-datepicker-toggle matSuffix [for]="transactionDatePick"></mat-datepicker-toggle>
-                <mat-datepicker #transactionDatePick></mat-datepicker>
-                <mat-error *ngIf="newTransaction.controls.scheduled.invalid">Must be MM/DD/YYYY*</mat-error>
-            </mat-form-field>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="effective">
-          <th mat-header-cell *matHeaderCellDef> effective </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-form-field>
-                <mat-label>effective</mat-label>
-                <input matInput [matDatepicker]="transactionDatePick" placeholder="" formControlName="effective">
-                <mat-datepicker-toggle matSuffix [for]="transactionDatePick"></mat-datepicker-toggle>
-                <mat-datepicker #transactionDatePick></mat-datepicker>
-                <mat-error *ngIf="newTransaction.controls.effective.invalid">Must be MM/DD/YYYY*</mat-error>
-            </mat-form-field>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="fromAccount">
-          <th mat-header-cell *matHeaderCellDef> from </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-form-field>
-              <mat-label>from</mat-label>
-              <select matNativeControl formControlName="fromAccount">
-                <option value="null"></option>
-                <option *ngFor="let option of accounts" [value]="option.name">{{ option.name }}</option>
-              </select>
-            </mat-form-field>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="toAccount">
-          <th mat-header-cell *matHeaderCellDef> to </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-form-field>
-              <mat-label>to</mat-label>
-              <select matNativeControl formControlName="toAccount">
-                <option value="null"></option>
-                <option *ngFor="let option of accounts" [value]="option.name">{{ option.name }}</option>
-              </select>
-            </mat-form-field>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="bucket">
-          <th mat-header-cell *matHeaderCellDef> bucket </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-form-field>
-              <mat-label>bucket</mat-label>
-              <select matNativeControl formControlName="bucket">
-                <option value="null"></option>
-                <option *ngFor="let option of buckets" [value]="option.name">{{ option.name }}</option>
-              </select>
-            </mat-form-field>
-          </td>
-        </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="quickAddColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: quickAddColumns;"></tr>
-
-    </table>
-
-    <button mat-raised-button>add</button>
-  </form>
+  </div>
 </div>

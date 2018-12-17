@@ -17,6 +17,7 @@ import { Transaction } from '../app.types';
 })
 export class TransactionsComponent implements OnChanges {
 
+  // Transaction data to display, fetched in parent.
   @Input() transactions: Transaction[];
 
   // Send transaction submissions up and out to parent.
@@ -48,6 +49,10 @@ export class TransactionsComponent implements OnChanges {
     updatedRow.details = rowData.details + '...updated!';
 
     this.transactionUpdatedEvent.emit(updatedRow);
+  }
+
+  onCellClick(cellData: any) {
+    console.log('cell click:', cellData);
   }
 
 }
