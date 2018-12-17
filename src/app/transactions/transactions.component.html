@@ -1,6 +1,9 @@
 <div class="transactions">
   <h3>transactions</h3>
-  <table mat-table [dataSource]="transactionTableSource" class="mat-elevation-z8">
+  <table mat-table
+    [dataSource]="transactionTableSource"
+    multiTemplateDataRows="true"
+    class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -62,10 +65,22 @@
     <!-- bucket Column -->
     <ng-container matColumnDef="bucket">
       <th mat-header-cell *matHeaderCellDef> bucket </th>
-      <td mat-cell *matCellDef="let element"> {{element.bucket?.name}} </td>
+      <td mat-cell *matCellDef="let element" (click)="onCellClick(element)"> {{element.bucket?.name}} </td>
+    </ng-container>
+
+    <!-- TODO: use expandable row pattern to accomplish in-line editing? -->
+    <ng-container matColumnDef="expanded">
+      <!-- <th mat-header-cell *matHeaderCellDef> test header </th> -->
+      <td mat-cell *matCellDef="let expanded" colspan="10">
+        test test test
+        <!-- TODO: jam app-edit-row in here?? -->
+      </td>
     </ng-container>
   
+    <!-- header template rendered here -->
     <tr mat-header-row *matHeaderRowDef="transactionsColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: transactionsColumns;" (click)="onRowClick(row)"></tr>
+    <!-- row templates rendered here -->
+    <tr mat-row *matRowDef="let row; columns: transactionsColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['expanded'];"></tr>
   </table>
 </div>
