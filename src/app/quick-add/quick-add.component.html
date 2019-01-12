@@ -1,13 +1,13 @@
 <div class="quick-add">
   <h3>quick add</h3>
-    <div class="quick-add-form">
-      <app-edit-row
-        [accounts]="accounts"
-        [buckets]="buckets"
-        [editForm]="newTransaction"
-        [editColumns]="quickAddColumns"
-        [editTableSource]="quickAddTableSource"
-        (transactionEditEvent)="receiveEditTransaction($event)"
-      ></app-edit-row>
+  <div class="quick-add-form">
+    <app-edit-row
+      [accounts]="accounts"
+      [buckets]="buckets"
+      [editForm]="newTransaction"
+      [editColumns]="quickAddColumns"
+      [editTableSource]="quickAddTableSource"
+    ></app-edit-row>
+    <button mat-raised-button (click)="onAdd()">add</button>
   </div>
 </div>
