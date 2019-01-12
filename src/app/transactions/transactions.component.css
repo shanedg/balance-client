@@ -5,3 +5,7 @@
 .transactions table td {
   text-align: left;
 }
+
+.transactions .transaction-cell {
+  padding: 0;
+}

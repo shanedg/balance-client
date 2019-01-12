@@ -5,30 +5,20 @@ import {
   Output,
   Input,
   SimpleChanges,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  NgForm
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
 import { EditRowComponent } from '../edit-row/edit-row.component';
-import {
-  Account,
-  Bucket,
-  Transaction
-} from '../app.types';
+import { Account, Bucket, Transaction } from '../app.types';
 
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.css']
+  styleUrls: ['./transactions.component.css'],
 })
 export class TransactionsComponent implements OnChanges, OnInit {
-
   // Receive accounts list from parent.
   @Input() accounts: Account[];
 
@@ -83,49 +73,40 @@ export class TransactionsComponent implements OnChanges, OnInit {
     'bucket',
   ];
 
-  constructor() { }
+  // Form controls
+  transactionsFormGroup = new FormGroup({
+    name: new FormControl(null, {
+      validators: [],
+    }),
+    amount: new FormControl(null, {
+      validators: [Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)],
+    }),
+    details: new FormControl(null, {
+      validators: [],
+    }),
+    due: new FormControl(null, {
+      validators: [],
+    }),
+    scheduled: new FormControl(null, {
+      validators: [],
+    }),
+    effective: new FormControl(null, {
+      validators: [],
+    }),
+    fromAccount: new FormControl(null, {
+      validators: [],
+    }),
+    toAccount: new FormControl(null, {
+      validators: [],
+    }),
+    bucket: new FormControl(null, {
+      validators: [],
+    }),
+  });
 
-  ngOnInit() {
-    // TODO: absolve this hack, should probably a subscription to the
-    // endpoint observable...
-    setTimeout(() => {
-      for (let transaction of this.transactions) {
-        Object.assign(transaction, {formControl: new FormGroup({
-          name: new FormControl(null, {
-            validators: []
-          }),
-          amount: new FormControl(null, {
-            validators: [
-              Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)
-            ]
-          }),
-          details: new FormControl(null, {
-            validators: []
-          }),
-          due: new FormControl(null, {
-            validators: []
-          }),
-          scheduled: new FormControl(null, {
-            validators: []
-          }),
-          effective: new FormControl(null, {
-            validators: []
-          }),
-          fromAccount: new FormControl(null, {
-            validators: []
-          }),
-          toAccount: new FormControl(null, {
-            validators: []
-          }),
-          bucket: new FormControl(null, {
-            validators: []
-          }),
-        }), tableSource: new MatTableDataSource([transaction])});
-      }
+  constructor() {}
 
-    }, 500);
-
-  }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     this.transactionTableSource.data = this.transactions;
@@ -133,7 +114,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
 
   onRowClick(rowData: any) {
     console.log('row click:', rowData);
-    let updatedRow = rowData;
+    const updatedRow = rowData;
     updatedRow.details = rowData.details + '...updated!';
 
     this.transactionUpdatedEvent.emit(updatedRow);
@@ -151,5 +132,4 @@ export class TransactionsComponent implements OnChanges, OnInit {
     console.log('editing:', $event);
     this.transactionUpdatedEvent.emit($event);
   }
-
 }
