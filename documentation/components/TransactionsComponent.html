@@ -1,0 +1,1319 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>balance documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">balance documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TransactionsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/transactions/transactions.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-transactions</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./transactions.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./transactions.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#initialAddValues">initialAddValues</a>
+                            </li>
+                            <li>
+                                <a href="#singletonColumns">singletonColumns</a>
+                            </li>
+                            <li>
+                                <a href="#singletonTableSource">singletonTableSource</a>
+                            </li>
+                            <li>
+                                <a href="#transactionsColumns">transactionsColumns</a>
+                            </li>
+                            <li>
+                                <a href="#transactionsFormGroup">transactionsFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#transactionTableSource">transactionTableSource</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onCellClick">onCellClick</a>
+                            </li>
+                            <li>
+                                <a href="#onRowClick">onRowClick</a>
+                            </li>
+                            <li>
+                                <a href="#receiveEditTransaction">receiveEditTransaction</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#accounts">accounts</a>
+                            </li>
+                            <li>
+                                <a href="#buckets">buckets</a>
+                            </li>
+                            <li>
+                                <a href="#transactions">transactions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#transactionUpdatedEvent">transactionUpdatedEvent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/transactions/transactions.component.ts:105</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="accounts"></a>
+                        <code>accounts</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="../classes/Account.html" target="_self" >Account[]</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/transactions/transactions.component.ts:23</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="buckets"></a>
+                        <code>buckets</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="../classes/Bucket.html" target="_self" >Bucket[]</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/transactions/transactions.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="transactions"></a>
+                        <code>transactions</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="../classes/Transaction.html" target="_self" >Transaction[]</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/transactions/transactions.component.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="transactionUpdatedEvent"></a>
+                        <code>transactionUpdatedEvent</code>
+                    </td>
+                    <td class="col-md-10">
+                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/transactions/transactions.component.ts:32</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnChanges"></a>
+                        <span class="name">
+                            <b>
+                            ngOnChanges
+                            </b>
+                            <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/transactions/transactions.component.ts:111</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>changes</td>
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/transactions/transactions.component.ts:109</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onCellClick"></a>
+                        <span class="name">
+                            <b>
+                            onCellClick
+                            </b>
+                            <a href="#onCellClick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onCellClick(cellData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/app/transactions/transactions.component.ts:123</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cellData</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onRowClick"></a>
+                        <span class="name">
+                            <b>
+                            onRowClick
+                            </b>
+                            <a href="#onRowClick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onRowClick(rowData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/transactions/transactions.component.ts:115</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>rowData</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="receiveEditTransaction"></a>
+                        <span class="name">
+                            <b>
+                            receiveEditTransaction
+                            </b>
+                            <a href="#receiveEditTransaction"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>receiveEditTransaction($event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/app/transactions/transactions.component.ts:131</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>$event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialAddValues"></a>
+                        <span class="name">
+                            <b>
+                            initialAddValues
+                            </b>
+                            <a href="#initialAddValues"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>initialAddValues:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      // id: null,
+      name: null,
+      amount: null,
+      details: null,
+      due: null,
+      scheduled: null,
+      effective: null,
+      fromAccount: null,
+      toAccount: null,
+      bucket: null,
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/transactions/transactions.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="singletonColumns"></a>
+                        <span class="name">
+                            <b>
+                            singletonColumns
+                            </b>
+                            <a href="#singletonColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>singletonColumns:     <code>string[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    // &#x27;id&#x27;, // from cms, we don&#x27;t want to create this ourselves
+    &#x27;name&#x27;,
+    &#x27;amount&#x27;,
+    &#x27;details&#x27;,
+    &#x27;due&#x27;,
+    &#x27;scheduled&#x27;,
+    &#x27;effective&#x27;,
+    &#x27;fromAccount&#x27;,
+    &#x27;toAccount&#x27;,
+    &#x27;bucket&#x27;,
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/transactions/transactions.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="singletonTableSource"></a>
+                        <span class="name">
+                            <b>
+                            singletonTableSource
+                            </b>
+                            <a href="#singletonTableSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>singletonTableSource:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new MatTableDataSource(this.initialAddValues)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/transactions/transactions.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transactionsColumns"></a>
+                        <span class="name">
+                            <b>
+                            transactionsColumns
+                            </b>
+                            <a href="#transactionsColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>transactionsColumns:     <code>string[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    &#x27;id&#x27;,
+    &#x27;name&#x27;,
+    &#x27;amount&#x27;,
+    &#x27;details&#x27;,
+    &#x27;due&#x27;,
+    &#x27;scheduled&#x27;,
+    &#x27;effective&#x27;,
+    &#x27;fromAccount&#x27;,
+    &#x27;toAccount&#x27;,
+    &#x27;bucket&#x27;,
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/transactions/transactions.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transactionsFormGroup"></a>
+                        <span class="name">
+                            <b>
+                            transactionsFormGroup
+                            </b>
+                            <a href="#transactionsFormGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>transactionsFormGroup:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormGroup({
+    name: new FormControl(null, {
+      validators: [],
+    }),
+    amount: new FormControl(null, {
+      validators: [Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)],
+    }),
+    details: new FormControl(null, {
+      validators: [],
+    }),
+    due: new FormControl(null, {
+      validators: [],
+    }),
+    scheduled: new FormControl(null, {
+      validators: [],
+    }),
+    effective: new FormControl(null, {
+      validators: [],
+    }),
+    fromAccount: new FormControl(null, {
+      validators: [],
+    }),
+    toAccount: new FormControl(null, {
+      validators: [],
+    }),
+    bucket: new FormControl(null, {
+      validators: [],
+    }),
+  })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/transactions/transactions.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transactionTableSource"></a>
+                        <span class="name">
+                            <b>
+                            transactionTableSource
+                            </b>
+                            <a href="#transactionTableSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>transactionTableSource:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new MatTableDataSource(this.transactions)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/transactions/transactions.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component,
+  EventEmitter,
+  OnChanges,
+  Output,
+  Input,
+  SimpleChanges,
+  OnInit,
+} from &#x27;@angular/core&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material&#x27;;
+import { FormGroup, FormControl, Validators, NgForm } from &#x27;@angular/forms&#x27;;
+
+import { EditRowComponent } from &#x27;../edit-row/edit-row.component&#x27;;
+import { Account, Bucket, Transaction } from &#x27;../app.types&#x27;;
+
+@Component({
+  selector: &#x27;app-transactions&#x27;,
+  templateUrl: &#x27;./transactions.component.html&#x27;,
+  styleUrls: [&#x27;./transactions.component.css&#x27;],
+})
+export class TransactionsComponent implements OnChanges, OnInit {
+  // Receive accounts list from parent.
+  @Input() accounts: Account[];
+
+  // Receive buckets list from parent.
+  @Input() buckets: Bucket[];
+
+  // Transaction data to display, fetched in parent.
+  @Input() transactions: Transaction[];
+
+  // Send transaction submissions up and out to parent.
+  @Output() transactionUpdatedEvent &#x3D; new EventEmitter&lt;Transaction&gt;();
+
+  transactionTableSource &#x3D; new MatTableDataSource(this.transactions);
+  transactionsColumns: string[] &#x3D; [
+    &#x27;id&#x27;,
+    &#x27;name&#x27;,
+    &#x27;amount&#x27;,
+    &#x27;details&#x27;,
+    &#x27;due&#x27;,
+    &#x27;scheduled&#x27;,
+    &#x27;effective&#x27;,
+    &#x27;fromAccount&#x27;,
+    &#x27;toAccount&#x27;,
+    &#x27;bucket&#x27;,
+  ];
+
+  initialAddValues &#x3D; [
+    {
+      // id: null,
+      name: null,
+      amount: null,
+      details: null,
+      due: null,
+      scheduled: null,
+      effective: null,
+      fromAccount: null,
+      toAccount: null,
+      bucket: null,
+    },
+  ];
+  singletonTableSource &#x3D; new MatTableDataSource(this.initialAddValues);
+  singletonColumns: string[] &#x3D; [
+    // &#x27;id&#x27;, // from cms, we don&#x27;t want to create this ourselves
+    &#x27;name&#x27;,
+    &#x27;amount&#x27;,
+    &#x27;details&#x27;,
+    &#x27;due&#x27;,
+    &#x27;scheduled&#x27;,
+    &#x27;effective&#x27;,
+    &#x27;fromAccount&#x27;,
+    &#x27;toAccount&#x27;,
+    &#x27;bucket&#x27;,
+  ];
+
+  // Form controls
+  transactionsFormGroup &#x3D; new FormGroup({
+    name: new FormControl(null, {
+      validators: [],
+    }),
+    amount: new FormControl(null, {
+      validators: [Validators.pattern(/^-?\d+(\.?\d{1,2})?$/)],
+    }),
+    details: new FormControl(null, {
+      validators: [],
+    }),
+    due: new FormControl(null, {
+      validators: [],
+    }),
+    scheduled: new FormControl(null, {
+      validators: [],
+    }),
+    effective: new FormControl(null, {
+      validators: [],
+    }),
+    fromAccount: new FormControl(null, {
+      validators: [],
+    }),
+    toAccount: new FormControl(null, {
+      validators: [],
+    }),
+    bucket: new FormControl(null, {
+      validators: [],
+    }),
+  });
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.transactionTableSource.data &#x3D; this.transactions;
+  }
+
+  onRowClick(rowData: any) {
+    console.log(&#x27;row click:&#x27;, rowData);
+    const updatedRow &#x3D; rowData;
+    updatedRow.details &#x3D; rowData.details + &#x27;...updated!&#x27;;
+
+    this.transactionUpdatedEvent.emit(updatedRow);
+  }
+
+  onCellClick(cellData: any) {
+    console.log(&#x27;cell click:&#x27;, cellData);
+  }
+
+  /*
+   * Receive new transaction from &#x60;transactionEditEvent&#x60;,
+   * pass thru to parent.
+   */
+  receiveEditTransaction($event) {
+    console.log(&#x27;editing:&#x27;, $event);
+    this.transactionUpdatedEvent.emit($event);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;transactions&quot;&gt;
+  &lt;h3&gt;transactions&lt;/h3&gt;
+  &lt;table
+    mat-table
+    [dataSource]&#x3D;&quot;transactionTableSource&quot;
+    multiTemplateDataRows&#x3D;&quot;true&quot;
+    class&#x3D;&quot;mat-elevation-z8&quot;
+  &gt;
+    &lt;!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition&quot; --&gt;
+
+    &lt;!-- id Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;id&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;id&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.id }}&lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- name Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;name&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.name }}&lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- amount Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;amount&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;amount&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+        {{ element.amount | currency: &#x27;USD&#x27; }}
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- details Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;details&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;details&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.details }}&lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- due Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;due&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;due&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+        {{ element.due | date: &#x27;MM/dd&#x27; }}
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- scheduled Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;scheduled&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;scheduled&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+        {{ element.scheduled | date: &#x27;MM/dd&#x27; }}
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- effective Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;effective&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;effective&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+        {{ element.effective | date: &#x27;MM/dd&#x27; }}
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- fromAccount Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;fromAccount&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;fromAccount&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+        {{ element.fromAccount?.name }}
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- toAccount Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;toAccount&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;toAccount&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.toAccount?.name }}&lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- bucket Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;bucket&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;bucket&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; (click)&#x3D;&quot;onCellClick(element)&quot;&gt;
+        {{ element.bucket?.name }}
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- TODO: use expandable row pattern to accomplish in-line editing? --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;expanded&quot;&gt;
+      &lt;!-- &lt;th mat-header-cell *matHeaderCellDef&gt; test header &lt;/th&gt; --&gt;
+      &lt;td
+        mat-cell
+        class&#x3D;&quot;transaction-cell&quot;
+        [attr.colspan]&#x3D;&quot;transactionsColumns.length&quot;
+        *matCellDef&#x3D;&quot;let row&quot;
+      &gt;
+        &lt;app-edit-row
+          [accounts]&#x3D;&quot;accounts&quot;
+          [buckets]&#x3D;&quot;buckets&quot;
+          [editForm]&#x3D;&quot;transactionsFormGroup&quot;
+          [editColumns]&#x3D;&quot;singletonColumns&quot;
+          [editTableSource]&#x3D;&quot;row.tableSource&quot;
+          (transactionEditEvent)&#x3D;&quot;receiveEditTransaction($event)&quot;
+        &gt;&lt;/app-edit-row&gt;
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!-- header template rendered here --&gt;
+    &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;transactionsColumns&quot;&gt;&lt;/tr&gt;
+    &lt;!-- row templates rendered here --&gt;
+    &lt;tr
+      mat-row
+      *matRowDef&#x3D;&quot;let row; columns: transactionsColumns&quot;
+      class&#x3D;&quot;static-row&quot;
+      [class.expanded-row]&#x3D;&quot;expandedRow &#x3D;&#x3D;&#x3D; row&quot;
+      (click)&#x3D;&quot;expandedRow &#x3D; row &#x3D;&#x3D;&#x3D; expandedRow ? null : row&quot;
+    &gt;&lt;/tr&gt;
+    &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: [&#x27;expanded&#x27;]&quot;&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./transactions.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.transactions table {
+  width: 100%;
+}
+
+.transactions table td {
+  text-align: left;
+}
+
+.static-row {
+  height: 0;
+  min-height: 0;
+}
+
+.static-row.expanded-row {
+  height: 100px;
+  min-height: 100px;
+}
+
+.transactions .transaction-cell {
+  padding: 0;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="transactions">  <h3>transactions</h3>  <table    mat-table    [dataSource]="transactionTableSource"    multiTemplateDataRows="true"    class="mat-elevation-z8"  >    <!--- Note that these columns can be defined in any order.          The actual rendered columns are set as a property on the row definition" -->    <!-- id Column -->    <ng-container matColumnDef="id">      <th mat-header-cell *matHeaderCellDef>id</th>      <td mat-cell *matCellDef="let element">{{ element.id }}</td>    </ng-container>    <!-- name Column -->    <ng-container matColumnDef="name">      <th mat-header-cell *matHeaderCellDef>name</th>      <td mat-cell *matCellDef="let element">{{ element.name }}</td>    </ng-container>    <!-- amount Column -->    <ng-container matColumnDef="amount">      <th mat-header-cell *matHeaderCellDef>amount</th>      <td mat-cell *matCellDef="let element">        {{ element.amount | currency: \'USD\' }}      </td>    </ng-container>    <!-- details Column -->    <ng-container matColumnDef="details">      <th mat-header-cell *matHeaderCellDef>details</th>      <td mat-cell *matCellDef="let element">{{ element.details }}</td>    </ng-container>    <!-- due Column -->    <ng-container matColumnDef="due">      <th mat-header-cell *matHeaderCellDef>due</th>      <td mat-cell *matCellDef="let element">        {{ element.due | date: \'MM/dd\' }}      </td>    </ng-container>    <!-- scheduled Column -->    <ng-container matColumnDef="scheduled">      <th mat-header-cell *matHeaderCellDef>scheduled</th>      <td mat-cell *matCellDef="let element">        {{ element.scheduled | date: \'MM/dd\' }}      </td>    </ng-container>    <!-- effective Column -->    <ng-container matColumnDef="effective">      <th mat-header-cell *matHeaderCellDef>effective</th>      <td mat-cell *matCellDef="let element">        {{ element.effective | date: \'MM/dd\' }}      </td>    </ng-container>    <!-- fromAccount Column -->    <ng-container matColumnDef="fromAccount">      <th mat-header-cell *matHeaderCellDef>fromAccount</th>      <td mat-cell *matCellDef="let element">        {{ element.fromAccount?.name }}      </td>    </ng-container>    <!-- toAccount Column -->    <ng-container matColumnDef="toAccount">      <th mat-header-cell *matHeaderCellDef>toAccount</th>      <td mat-cell *matCellDef="let element">{{ element.toAccount?.name }}</td>    </ng-container>    <!-- bucket Column -->    <ng-container matColumnDef="bucket">      <th mat-header-cell *matHeaderCellDef>bucket</th>      <td mat-cell *matCellDef="let element" (click)="onCellClick(element)">        {{ element.bucket?.name }}      </td>    </ng-container>    <!-- TODO: use expandable row pattern to accomplish in-line editing? -->    <ng-container matColumnDef="expanded">      <!-- <th mat-header-cell *matHeaderCellDef> test header </th> -->      <td        mat-cell        class="transaction-cell"        [attr.colspan]="transactionsColumns.length"        *matCellDef="let row"      >        <app-edit-row          [accounts]="accounts"          [buckets]="buckets"          [editForm]="transactionsFormGroup"          [editColumns]="singletonColumns"          [editTableSource]="row.tableSource"          (transactionEditEvent)="receiveEditTransaction($event)"        ></app-edit-row>      </td>    </ng-container>    <!-- header template rendered here -->    <tr mat-header-row *matHeaderRowDef="transactionsColumns"></tr>    <!-- row templates rendered here -->    <tr      mat-row      *matRowDef="let row; columns: transactionsColumns"      class="static-row"      [class.expanded-row]="expandedRow === row"      (click)="expandedRow = row === expandedRow ? null : row"    ></tr>    <tr mat-row *matRowDef="let row; columns: [\'expanded\']"></tr>  </table></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditRowComponent', 'selector': 'app-edit-row'},{'name': 'QuickAddComponent', 'selector': 'app-quick-add'},{'name': 'TransactionsComponent', 'selector': 'app-transactions'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TransactionsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TransactionsComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
