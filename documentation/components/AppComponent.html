@@ -185,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/app.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -199,6 +199,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -213,6 +214,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Injected service for communicating with API endpoints.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -254,13 +259,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/app.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/app.component.ts:38</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>On init, fetch transactions, accounts, and buckets data from API.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -285,20 +292,23 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>receiveNewTransaction($event)</code>
+<code>receiveNewTransaction($event: <a href="../classes/Transaction.html">Transaction</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/app.component.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/app.component.ts:59</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Pass new transaction to endpointService and subscribe to result.</p>
+<p>Important to treat <code>this.transactions</code> as immutable so that update triggers change detection correctly.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -306,18 +316,27 @@
                                         <thead>
                                             <tr>
                                                 <td>Name</td>
+                                                    <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
                                                         <td>$event</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Transaction.html" target="_self" >Transaction</a></code>
+                                                        </td>
                                                     
                                                     <td>
                                                             No
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>New transaction event.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -350,20 +369,25 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>receiveUpdatedTransaction($event)</code>
+<code>receiveUpdatedTransaction($event: <a href="../classes/Transaction.html">Transaction</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/app.component.ts:64</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/app.component.ts:77</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>[WIP]
+[TODO]</p>
+<p>Pass edited transaction to endpointService and subscribe to result.</p>
+<p>Important to treat <code>this.transactions</code> as immutable so that update triggers change detection correctly.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -371,18 +395,27 @@
                                         <thead>
                                             <tr>
                                                 <td>Name</td>
+                                                    <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
                                                         <td>$event</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Transaction.html" target="_self" >Transaction</a></code>
+                                                        </td>
                                                     
                                                     <td>
                                                             No
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Updated transaction event.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -434,10 +467,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/app.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>App accounts data, array of Accounts retrieved from API via injected <code>EndpointService</code>.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -468,10 +507,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/app.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app.component.ts:28</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>App buckets data, array of Buckets retrieved from API via injected <code>EndpointService</code>.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -507,10 +552,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/app.component.ts:16</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>App title.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -541,10 +592,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/app.component.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>App transaction data, array of Transactions retrieved from API via injected <code>EndpointService</code>.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -556,75 +613,84 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
-import {
-  Account,
-  Bucket,
-  PendingTransaction,
-  Transaction,
-} from &#x27;./app.types&#x27;;
+import { Account, Bucket, PendingTransaction, Transaction } from &#x27;./app.types&#x27;;
 
 import { EndpointService } from &#x27;./endpoint.service&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+  styleUrls: [&#x27;./app.component.css&#x27;],
 })
 export class AppComponent implements OnInit {
-  title &#x3D; &#x27;balance&#x27;;
+  /**
+   * App title.
+   */
+  title: string &#x3D; &#x27;balance&#x27;;
+  /**
+   * App transaction data, array of Transactions retrieved from API via injected &#x60;EndpointService&#x60;.
+   */
   transactions: Transaction[];
+  /**
+   * App accounts data, array of Accounts retrieved from API via injected &#x60;EndpointService&#x60;.
+   */
   accounts: Account[];
+  /**
+   * App buckets data, array of Buckets retrieved from API via injected &#x60;EndpointService&#x60;.
+   */
   buckets: Bucket[];
 
-  constructor(private endpointService: EndpointService) { }
+  /**
+   * @param {EndpointService} endpointService Injected service for communicating with API endpoints.
+   */
+  constructor(private endpointService: EndpointService) {}
 
+  /**
+   * On init, fetch transactions, accounts, and buckets data from API.
+   */
   ngOnInit() {
-    // get all transactions
-    this.endpointService.readAll(&#x27;/transactions/&#x27;)
-      .subscribe(transactions &#x3D;&gt; {
-        this.transactions &#x3D; [].concat(transactions);
-      });
+    this.endpointService.readAll(&#x27;/transactions/&#x27;).subscribe(transactions &#x3D;&gt; {
+      this.transactions &#x3D; [].concat(transactions);
+    });
 
-    // get all accounts
-    this.endpointService.readAll(&#x27;/accounts/&#x27;)
-      .subscribe(accounts &#x3D;&gt; {
-        this.accounts &#x3D; [].concat(accounts);
-      });
+    this.endpointService.readAll(&#x27;/accounts/&#x27;).subscribe(accounts &#x3D;&gt; {
+      this.accounts &#x3D; [].concat(accounts);
+    });
 
-    // get all buckets
-    this.endpointService.readAll(&#x27;/buckets/&#x27;)
-      .subscribe(buckets &#x3D;&gt; {
-        this.buckets &#x3D; [].concat(buckets);
-      });
+    this.endpointService.readAll(&#x27;/buckets/&#x27;).subscribe(buckets &#x3D;&gt; {
+      this.buckets &#x3D; [].concat(buckets);
+    });
   }
 
-  /*
-   * Pass new transaction object to service and subscribe
-   * to result.
+  /**
+   * Pass new transaction to endpointService and subscribe to result.
+   *
+   * Important to treat &#x60;this.transactions&#x60; as immutable so that update triggers change detection correctly.
+   * @function receiveNewTransaction
+   * @param {Transaction} $event New transaction event.
    */
-  receiveNewTransaction($event) {
-    this.endpointService.create(&#x27;/transactions/&#x27;, $event)
+  receiveNewTransaction($event: Transaction) {
+    this.endpointService
+      .create(&#x27;/transactions/&#x27;, $event)
       .subscribe(newTransaction &#x3D;&gt; {
-        /*
-         * Treat  &#x60;this.transactions&#x60; as immutable so that this change
-         * triggers &#x60;ngOnChanges&#x60; in children that receive it.
-         */
         this.transactions &#x3D; this.transactions.concat(newTransaction);
       });
   }
 
-  /*
-   * Pass updated transaction object to service and subscribe
-   * to result.
+  /**
+   * [WIP]
+   * [TODO]
+   *
+   * Pass edited transaction to endpointService and subscribe to result.
+   *
+   * Important to treat &#x60;this.transactions&#x60; as immutable so that update triggers change detection correctly.
+   * @function receiveUpdatedTransaction
+   * @param {Transaction} $event Updated transaction event.
    */
-  receiveUpdatedTransaction($event) {
-    this.endpointService.update(&#x27;/transactions/&#x27;, $event.id, $event)
+  receiveUpdatedTransaction($event: Transaction) {
+    this.endpointService
+      .update(&#x27;/transactions/&#x27;, $event.id, $event)
       .subscribe(updatedTransaction &#x3D;&gt; {
-        /*
-         * Treat &#x60;this.transactions&#x60; as immutable so that this change
-         * triggers &#x60;ngOnChanges&#x60; in children that receive it.
-         */
-
         /*
          * Re-insert updated transaction at the correct location in
          * the transactions array...tho this only preserves the ordering
@@ -646,12 +712,12 @@ export class AppComponent implements OnInit {
         if (priorIndex &#x3D;&#x3D;&#x3D; 0) {
           const after &#x3D; this.transactions.slice(1);
           this.transactions &#x3D; [updatedTransaction].concat(after);
-        } else if (priorIndex &#x3D;&#x3D;&#x3D; (limit - 1)) {
-          const before &#x3D; this.transactions.slice(0, (limit - 1));
+        } else if (priorIndex &#x3D;&#x3D;&#x3D; limit - 1) {
+          const before &#x3D; this.transactions.slice(0, limit - 1);
           this.transactions &#x3D; before.concat(updatedTransaction);
         } else {
           const before &#x3D; this.transactions.slice(0, priorIndex);
-          const after &#x3D; this.transactions.slice((priorIndex + 1));
+          const after &#x3D; this.transactions.slice(priorIndex + 1);
           this.transactions &#x3D; before.concat(updatedTransaction).concat(after);
         }
       });
