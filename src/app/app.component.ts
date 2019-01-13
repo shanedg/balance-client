@@ -1,74 +1,83 @@
 import { Component, OnInit } from '@angular/core';
 
-import {
-  Account,
-  Bucket,
-  PendingTransaction,
-  Transaction,
-} from './app.types';
+import { Account, Bucket, PendingTransaction, Transaction } from './app.types';
 
 import { EndpointService } from './endpoint.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'balance';
+  /**
+   * App title.
+   */
+  title: string = 'balance';
+  /**
+   * App transaction data, array of Transactions retrieved from API via injected `EndpointService`.
+   */
   transactions: Transaction[];
+  /**
+   * App accounts data, array of Accounts retrieved from API via injected `EndpointService`.
+   */
   accounts: Account[];
+  /**
+   * App buckets data, array of Buckets retrieved from API via injected `EndpointService`.
+   */
   buckets: Bucket[];
 
-  constructor(private endpointService: EndpointService) { }
+  /**
+   * @param {EndpointService} endpointService Injected service for communicating with API endpoints.
+   */
+  constructor(private endpointService: EndpointService) {}
 
+  /**
+   * On init, fetch transactions, accounts, and buckets data from API.
+   */
   ngOnInit() {
-    // get all transactions
-    this.endpointService.readAll('/transactions/')
-      .subscribe(transactions => {
-        this.transactions = [].concat(transactions);
-      });
+    this.endpointService.readAll('/transactions/').subscribe(transactions => {
+      this.transactions = [].concat(transactions);
+    });
 
-    // get all accounts
-    this.endpointService.readAll('/accounts/')
-      .subscribe(accounts => {
-        this.accounts = [].concat(accounts);
-      });
+    this.endpointService.readAll('/accounts/').subscribe(accounts => {
+      this.accounts = [].concat(accounts);
+    });
 
-    // get all buckets
-    this.endpointService.readAll('/buckets/')
-      .subscribe(buckets => {
-        this.buckets = [].concat(buckets);
-      });
+    this.endpointService.readAll('/buckets/').subscribe(buckets => {
+      this.buckets = [].concat(buckets);
+    });
   }
 
-  /*
-   * Pass new transaction object to service and subscribe
-   * to result.
+  /**
+   * Pass new transaction to endpointService and subscribe to result.
+   *
+   * Important to treat `this.transactions` as immutable so that update triggers change detection correctly.
+   * @function receiveNewTransaction
+   * @param {Transaction} $event New transaction event.
    */
-  receiveNewTransaction($event) {
-    this.endpointService.create('/transactions/', $event)
+  receiveNewTransaction($event: Transaction) {
+    this.endpointService
+      .create('/transactions/', $event)
       .subscribe(newTransaction => {
-        /*
-         * Treat  `this.transactions` as immutable so that this change
-         * triggers `ngOnChanges` in children that receive it.
-         */
         this.transactions = this.transactions.concat(newTransaction);
       });
   }
 
-  /*
-   * Pass updated transaction object to service and subscribe
-   * to result.
+  /**
+   * [WIP]
+   * [TODO]
+   *
+   * Pass edited transaction to endpointService and subscribe to result.
+   *
+   * Important to treat `this.transactions` as immutable so that update triggers change detection correctly.
+   * @function receiveUpdatedTransaction
+   * @param {Transaction} $event Updated transaction event.
    */
-  receiveUpdatedTransaction($event) {
-    this.endpointService.update('/transactions/', $event.id, $event)
+  receiveUpdatedTransaction($event: Transaction) {
+    this.endpointService
+      .update('/transactions/', $event.id, $event)
       .subscribe(updatedTransaction => {
-        /*
-         * Treat `this.transactions` as immutable so that this change
-         * triggers `ngOnChanges` in children that receive it.
-         */
-
         /*
          * Re-insert updated transaction at the correct location in
          * the transactions array...tho this only preserves the ordering
@@ -90,12 +99,12 @@ export class AppComponent implements OnInit {
         if (priorIndex === 0) {
           const after = this.transactions.slice(1);
           this.transactions = [updatedTransaction].concat(after);
-        } else if (priorIndex === (limit - 1)) {
-          const before = this.transactions.slice(0, (limit - 1));
+        } else if (priorIndex === limit - 1) {
+          const before = this.transactions.slice(0, limit - 1);
           this.transactions = before.concat(updatedTransaction);
         } else {
           const before = this.transactions.slice(0, priorIndex);
-          const after = this.transactions.slice((priorIndex + 1));
+          const after = this.transactions.slice(priorIndex + 1);
           this.transactions = before.concat(updatedTransaction).concat(after);
         }
       });

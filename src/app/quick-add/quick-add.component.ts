@@ -102,7 +102,7 @@ export class QuickAddComponent implements OnInit {
     const formGroup = this.editRowComponent.editForm;
     const formValues = this.editRowComponent.editForm.value;
 
-    // TODO: this form is never invalid actually
+    // TODO: lol this form is never invalid tho
     if (!formGroup.invalid) {
       console.log('fresh transaction:', formValues);
       const freshTransaction = {
