@@ -20,19 +20,31 @@ import { EditRowComponent } from '../edit-row/edit-row.component';
   styleUrls: ['./quick-add.component.css'],
 })
 export class QuickAddComponent implements OnInit {
-  // Receive accounts list from parent.
+  /**
+   * List of Accounts which the user may select from.
+   */
   @Input() accounts: Account[];
 
-  // Receive buckets list from parent.
+  /**
+   * List of Buckets which the user may select from.
+   */
   @Input() buckets: Bucket[];
 
-  // Pass transaction submissions thru to parent.
-  @Output() transactionAddedEvent = new EventEmitter<PendingTransaction>();
+  /**
+   * Emit event with details of a new transaction.
+   */
+  @Output() public transactionAddedEvent: EventEmitter<
+    PendingTransaction
+  > = new EventEmitter<PendingTransaction>();
 
-  // Reference to form in `app-edit-row` child.
-  @ViewChild(EditRowComponent) editRowComponent: EditRowComponent;
+  /**
+   * [TODO] Reference to form in `app-edit-row` child.
+   */
+  @ViewChild(EditRowComponent) private editRowComponent: EditRowComponent;
 
-  // Form controls
+  /**
+   * [TODO] Form controls...
+   */
   newTransaction = new FormGroup({
     name: new FormControl(null, {
       validators: [],
@@ -63,7 +75,10 @@ export class QuickAddComponent implements OnInit {
     }),
   });
 
-  initialAddValues = [
+  /**
+   * [TODO] Initial values for new transaction table.
+   */
+  private initialAddValues = [
     {
       name: null,
       amount: null,
@@ -76,8 +91,16 @@ export class QuickAddComponent implements OnInit {
       bucket: null,
     },
   ];
-  quickAddTableSource = new MatTableDataSource(this.initialAddValues);
+  /**
+   * Source for new transaction table.
+   */
+  quickAddTableSource: MatTableDataSource<
+    PendingTransaction
+  > = new MatTableDataSource(this.initialAddValues);
 
+  /**
+   * Columns to display in new transaction table.
+   */
   quickAddColumns: string[] = [
     'name',
     'amount',
@@ -94,17 +117,15 @@ export class QuickAddComponent implements OnInit {
 
   ngOnInit() {}
 
-  /*
-   * Receive new transaction from `transactionEditEvent`,
-   * pass thru to parent.
+  /**
+   * [TODO] Receive new transaction from `transactionEditEvent`, pass thru to parent.
    */
   onAdd() {
     const formGroup = this.editRowComponent.editForm;
-    const formValues = this.editRowComponent.editForm.value;
+    const formValues = formGroup.value;
 
     // TODO: lol this form is never invalid tho
     if (!formGroup.invalid) {
-      console.log('fresh transaction:', formValues);
       const freshTransaction = {
         name: formValues.name,
         amount: formValues.amount,
@@ -130,10 +151,14 @@ export class QuickAddComponent implements OnInit {
     }
   }
 
-  /*
-   * Map account name string back to Account-shaped object.
+  /**
+   * Map account name back to Account object.
+   *
+   * [TODO] Refactor to avoid searching names list.
+   * @param {string} name Account name.
+   * @returns {Account} Account with the given name.
    */
-  getAccount(name: string) {
+  private getAccount(name: string) {
     let account = null;
     this.accounts.forEach(item => {
       if (item.name === name) {
@@ -144,10 +169,14 @@ export class QuickAddComponent implements OnInit {
     return account;
   }
 
-  /*
-   * Map bucket name string back to Bucket-shaped object.
+  /**
+   * Map bucket name back to Bucket object.
+   *
+   * [TODO] Refactor to avoid searching names list.
+   * @param {string} name Bucket name.
+   * @returns {Bucket} Bucket with the given name.
    */
-  getBucket(name: string) {
+  private getBucket(name: string) {
     let bucket = null;
     this.buckets.forEach(item => {
       if (item.name === name) {

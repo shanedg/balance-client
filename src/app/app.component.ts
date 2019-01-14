@@ -14,14 +14,17 @@ export class AppComponent implements OnInit {
    * App title.
    */
   title: string = 'balance';
+
   /**
    * App transaction data, array of Transactions retrieved from API via injected `EndpointService`.
    */
   transactions: Transaction[];
+
   /**
    * App accounts data, array of Accounts retrieved from API via injected `EndpointService`.
    */
   accounts: Account[];
+
   /**
    * App buckets data, array of Buckets retrieved from API via injected `EndpointService`.
    */

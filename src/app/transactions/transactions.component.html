@@ -90,14 +90,15 @@
         [attr.colspan]="transactionsColumns.length"
         *matCellDef="let row"
       >
-        <app-edit-row
+        <!-- TODO: naive edit-in-place, EditRowComponent for every row -->
+        <!-- <app-edit-row
           [accounts]="accounts"
           [buckets]="buckets"
           [editForm]="transactionsFormGroup"
-          [editColumns]="singletonColumns"
+          [editColumns]="transactionsColumns"
           [editTableSource]="row.tableSource"
           (transactionEditEvent)="receiveEditTransaction($event)"
-        ></app-edit-row>
+        ></app-edit-row> -->
       </td>
     </ng-container>
 
