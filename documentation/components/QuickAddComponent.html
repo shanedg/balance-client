@@ -130,9 +130,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#editRowComponent">editRowComponent</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#initialAddValues">initialAddValues</a>
                             </li>
                             <li>
@@ -157,9 +159,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#getAccount">getAccount</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#getBucket">getBucket</a>
                             </li>
                             <li>
@@ -222,7 +226,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/quick-add/quick-add.component.ts:91</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/quick-add/quick-add.component.ts:114</a></div>
                             </td>
                         </tr>
 
@@ -240,6 +244,8 @@
                         <code>accounts</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>List of Accounts which the user may select from.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/Account.html" target="_self" >Account[]</a></code>
 
@@ -248,7 +254,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/quick-add/quick-add.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/quick-add/quick-add.component.ts:26</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -261,6 +267,8 @@
                         <code>buckets</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>List of Buckets which the user may select from.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/Bucket.html" target="_self" >Bucket[]</a></code>
 
@@ -269,7 +277,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/quick-add/quick-add.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/quick-add/quick-add.component.ts:31</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -285,13 +293,15 @@
                         <code>transactionAddedEvent</code>
                     </td>
                     <td class="col-md-10">
-                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                        <div><p>Emit event with details of a new transaction.</p>
+</div>
+                        <em><code>$event</code> Type:</em>    <code><a href="../classes/Transaction.html" target="_self" >EventEmitter&lt;PendingTransaction&gt;</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/quick-add/quick-add.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/quick-add/quick-add.component.ts:36</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -311,6 +321,7 @@
                         <a name="getAccount"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Private</span>
                             getAccount
                             </b>
                             <a href="#getAccount"><span class="icon ion-ios-link"></span></a>
@@ -319,20 +330,24 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>getAccount(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getAccount(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/app/quick-add/quick-add.component.ts:136</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/app/quick-add/quick-add.component.ts:161</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Map account name back to Account object.</p>
+<p>[TODO] Refactor to avoid searching names list.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -342,6 +357,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -356,6 +372,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Account name.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -367,7 +387,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>Account with the given name.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -380,6 +401,7 @@
                         <a name="getBucket"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Private</span>
                             getBucket
                             </b>
                             <a href="#getBucket"><span class="icon ion-ios-link"></span></a>
@@ -388,20 +410,24 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>getBucket(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getBucket(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">src/app/quick-add/quick-add.component.ts:150</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/app/quick-add/quick-add.component.ts:179</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Map bucket name back to Bucket object.</p>
+<p>[TODO] Refactor to avoid searching names list.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -411,6 +437,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -425,6 +452,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Bucket name.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -436,7 +467,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>Bucket with the given name.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -464,7 +496,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/quick-add/quick-add.component.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/app/quick-add/quick-add.component.ts:118</a></div>
                             </td>
                         </tr>
 
@@ -502,13 +534,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/quick-add/quick-add.component.ts:101</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/app/quick-add/quick-add.component.ts:123</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>[TODO] Receive new transaction from <code>transactionEditEvent</code>, pass thru to parent.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -532,6 +566,7 @@
                         <a name="editRowComponent"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Private</span>
                             editRowComponent
                             </b>
                             <a href="#editRowComponent"><span class="icon ion-ios-link"></span></a>
@@ -540,7 +575,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>editRowComponent:     <code><a href="../components/EditRowComponent.html" target="_self" >EditRowComponent</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>editRowComponent:     <code><a href="../components/EditRowComponent.html" target="_self" >EditRowComponent</a></code>
 </code>
                     </td>
                 </tr>
@@ -561,10 +596,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/quick-add/quick-add.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/quick-add/quick-add.component.ts:43</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>[TODO] Reference to form in <code>app-edit-row</code> child.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -575,6 +616,7 @@
                         <a name="initialAddValues"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Private</span>
                             initialAddValues
                             </b>
                             <a href="#initialAddValues"><span class="icon ion-ios-link"></span></a>
@@ -583,7 +625,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>initialAddValues:     <code>[]</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>initialAddValues:     <code>[]</code>
 </code>
                     </td>
                 </tr>
@@ -612,10 +654,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/quick-add/quick-add.component.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/quick-add/quick-add.component.ts:81</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>[TODO] Initial values for new transaction table.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -673,10 +721,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/quick-add/quick-add.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/quick-add/quick-add.component.ts:48</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>[TODO] Form controls...</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -722,10 +776,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/quick-add/quick-add.component.ts:81</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/quick-add/quick-add.component.ts:104</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Columns to display in new transaction table.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -744,10 +804,16 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>quickAddTableSource:     <code></code>
+                        <code>quickAddTableSource:     <code><a href="../classes/Transaction.html" target="_self" >MatTableDataSource&lt;PendingTransaction&gt;</a></code>
 </code>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Transaction.html" target="_self" >MatTableDataSource&lt;PendingTransaction&gt;</a></code>
+
+                        </td>
+                    </tr>
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>new MatTableDataSource(this.initialAddValues)</code>
@@ -755,10 +821,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/quick-add/quick-add.component.ts:79</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/quick-add/quick-add.component.ts:97</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Source for new transaction table.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -790,19 +862,31 @@ import { EditRowComponent } from &#x27;../edit-row/edit-row.component&#x27;;
   styleUrls: [&#x27;./quick-add.component.css&#x27;],
 })
 export class QuickAddComponent implements OnInit {
-  // Receive accounts list from parent.
+  /**
+   * List of Accounts which the user may select from.
+   */
   @Input() accounts: Account[];
 
-  // Receive buckets list from parent.
+  /**
+   * List of Buckets which the user may select from.
+   */
   @Input() buckets: Bucket[];
 
-  // Pass transaction submissions thru to parent.
-  @Output() transactionAddedEvent &#x3D; new EventEmitter&lt;PendingTransaction&gt;();
+  /**
+   * Emit event with details of a new transaction.
+   */
+  @Output() public transactionAddedEvent: EventEmitter&lt;
+    PendingTransaction
+  &gt; &#x3D; new EventEmitter&lt;PendingTransaction&gt;();
 
-  // Reference to form in &#x60;app-edit-row&#x60; child.
-  @ViewChild(EditRowComponent) editRowComponent: EditRowComponent;
+  /**
+   * [TODO] Reference to form in &#x60;app-edit-row&#x60; child.
+   */
+  @ViewChild(EditRowComponent) private editRowComponent: EditRowComponent;
 
-  // Form controls
+  /**
+   * [TODO] Form controls...
+   */
   newTransaction &#x3D; new FormGroup({
     name: new FormControl(null, {
       validators: [],
@@ -833,7 +917,10 @@ export class QuickAddComponent implements OnInit {
     }),
   });
 
-  initialAddValues &#x3D; [
+  /**
+   * [TODO] Initial values for new transaction table.
+   */
+  private initialAddValues &#x3D; [
     {
       name: null,
       amount: null,
@@ -846,8 +933,16 @@ export class QuickAddComponent implements OnInit {
       bucket: null,
     },
   ];
-  quickAddTableSource &#x3D; new MatTableDataSource(this.initialAddValues);
+  /**
+   * Source for new transaction table.
+   */
+  quickAddTableSource: MatTableDataSource&lt;
+    PendingTransaction
+  &gt; &#x3D; new MatTableDataSource(this.initialAddValues);
 
+  /**
+   * Columns to display in new transaction table.
+   */
   quickAddColumns: string[] &#x3D; [
     &#x27;name&#x27;,
     &#x27;amount&#x27;,
@@ -864,17 +959,15 @@ export class QuickAddComponent implements OnInit {
 
   ngOnInit() {}
 
-  /*
-   * Receive new transaction from &#x60;transactionEditEvent&#x60;,
-   * pass thru to parent.
+  /**
+   * [TODO] Receive new transaction from &#x60;transactionEditEvent&#x60;, pass thru to parent.
    */
   onAdd() {
     const formGroup &#x3D; this.editRowComponent.editForm;
-    const formValues &#x3D; this.editRowComponent.editForm.value;
+    const formValues &#x3D; formGroup.value;
 
     // TODO: lol this form is never invalid tho
     if (!formGroup.invalid) {
-      console.log(&#x27;fresh transaction:&#x27;, formValues);
       const freshTransaction &#x3D; {
         name: formValues.name,
         amount: formValues.amount,
@@ -900,10 +993,14 @@ export class QuickAddComponent implements OnInit {
     }
   }
 
-  /*
-   * Map account name string back to Account-shaped object.
+  /**
+   * Map account name back to Account object.
+   *
+   * [TODO] Refactor to avoid searching names list.
+   * @param {string} name Account name.
+   * @returns {Account} Account with the given name.
    */
-  getAccount(name: string) {
+  private getAccount(name: string) {
     let account &#x3D; null;
     this.accounts.forEach(item &#x3D;&gt; {
       if (item.name &#x3D;&#x3D;&#x3D; name) {
@@ -914,10 +1011,14 @@ export class QuickAddComponent implements OnInit {
     return account;
   }
 
-  /*
-   * Map bucket name string back to Bucket-shaped object.
+  /**
+   * Map bucket name back to Bucket object.
+   *
+   * [TODO] Refactor to avoid searching names list.
+   * @param {string} name Bucket name.
+   * @returns {Bucket} Bucket with the given name.
    */
-  getBucket(name: string) {
+  private getBucket(name: string) {
     let bucket &#x3D; null;
     this.buckets.forEach(item &#x3D;&gt; {
       if (item.name &#x3D;&#x3D;&#x3D; name) {

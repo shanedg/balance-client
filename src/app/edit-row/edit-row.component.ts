@@ -9,17 +9,29 @@ import { Account, Bucket, PendingTransaction, Transaction } from '../app.types';
   styleUrls: ['./edit-row.component.css'],
 })
 export class EditRowComponent implements OnInit {
-  // Accounts and Buckets list from parent.
+  /**
+   * List of Accounts which the user may select from.
+   */
   @Input() accounts: Account[];
+
+  /**
+   * List of Buckets which the user may select from.
+   */
   @Input() buckets: Bucket[];
 
-  // Table columns from parent.
+  /**
+   * List of columns for display.
+   */
   @Input() editColumns: string[];
 
-  // Receive form group from parent.
+  /**
+   * [TODO] Form group...yo wait should this be an input at all? This might be a total change to the current architecture.
+   */
   @Input() editForm: FormGroup;
 
-  // quickAddTableSource = new MatTableDataSource(this.values);
+  /**
+   * [TODO] Transactions data, table data source.
+   */
   @Input() editTableSource: MatTableDataSource<any>;
 
   constructor() {}

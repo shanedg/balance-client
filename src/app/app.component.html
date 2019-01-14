@@ -1,8 +1,15 @@
 <div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
+  <h1>{{ title }}</h1>
   <!-- <mat-icon>attach_money</mat-icon> -->
-  <app-quick-add (transactionAddedEvent)="receiveNewTransaction($event)" [accounts]="accounts" [buckets]="buckets"></app-quick-add>
-  <app-transactions (transactionUpdatedEvent)="receiveUpdatedTransaction($event)" [accounts]="accounts" [buckets]="buckets" [transactions]="transactions"></app-transactions>
+  <app-quick-add
+    (transactionAddedEvent)="receiveNewTransaction($event)"
+    [accounts]="accounts"
+    [buckets]="buckets"
+  ></app-quick-add>
+  <app-transactions
+    (transactionUpdatedEvent)="receiveUpdatedTransaction($event)"
+    [accounts]="accounts"
+    [buckets]="buckets"
+    [transactions]="transactions"
+  ></app-transactions>
 </div>
