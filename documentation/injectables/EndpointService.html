@@ -74,9 +74,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#baseURL">baseURL</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#port">port</a>
                             </li>
                         </ul>
@@ -130,7 +132,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/endpoint.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/endpoint.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -195,13 +197,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/endpoint.service.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/endpoint.service.ts:53</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Generic API request to create a given object.</p>
+<p>[TODO] Will eventually need to auth these requests somehow.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -211,6 +216,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -225,6 +231,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Path from the base</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>newNoun</td>
@@ -237,6 +247,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>New object to create.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -248,7 +262,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>Observable result of http POST.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -278,13 +293,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/endpoint.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/endpoint.service.ts:30</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>[TODO] Lifted from angular docs, needs work for our context.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -294,6 +311,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -308,6 +326,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Error to handle from http response.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -347,13 +369,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/endpoint.service.ts:51</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/endpoint.service.ts:90</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Request a specific instance of a given type.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -363,6 +387,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -377,6 +402,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>API type path.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>id</td>
@@ -389,6 +418,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>ID of item to fetch.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -400,7 +433,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>Observable result of http GET.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -428,13 +462,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/endpoint.service.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/endpoint.service.ts:76</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Request all of a given type.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -444,6 +480,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -458,6 +495,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>API type path.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -469,7 +510,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>Observable result of http GET.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -497,13 +539,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/endpoint.service.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/endpoint.service.ts:107</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Update an existing instance of a given type.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -513,6 +557,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -527,6 +572,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>API type path.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>id</td>
@@ -539,6 +588,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>ID of item to update.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>newNoun</td>
@@ -551,6 +604,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Updated item.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -562,7 +619,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>Observable result of http POST.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -582,6 +640,7 @@
                         <a name="baseURL"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Private</span>
                             baseURL
                             </b>
                             <a href="#baseURL"><span class="icon ion-ios-link"></span></a>
@@ -590,7 +649,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>baseURL:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>baseURL:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
@@ -607,10 +666,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/endpoint.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/endpoint.service.ts:17</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Protocol and host for API requests.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -621,6 +686,7 @@
                         <a name="port"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Private</span>
                             port
                             </b>
                             <a href="#port"><span class="icon ion-ios-link"></span></a>
@@ -629,7 +695,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>port:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>port:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
@@ -646,10 +712,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/endpoint.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/endpoint.service.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Port for API requests.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -660,20 +732,34 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient, HttpHeaders, HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from &#x27;@angular/common/http&#x27;;
 import { catchError } from &#x27;rxjs/operators&#x27;;
-import { throwError } from &#x27;rxjs&#x27;;
+import { throwError, Observable } from &#x27;rxjs&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class EndpointService {
-  baseURL &#x3D; &#x27;http://localhost&#x27;;
-  port &#x3D; &#x27;1337&#x27;;
+  /**
+   * Protocol and host for API requests.
+   */
+  private baseURL &#x3D; &#x27;http://localhost&#x27;;
 
-  constructor(private http: HttpClient) { }
+  /**
+   * Port for API requests.
+   */
+  private port &#x3D; &#x27;1337&#x27;;
 
-  // possible error handling method, lifted from angular docs
+  constructor(private http: HttpClient) {}
+
+  /**
+   * [TODO] Lifted from angular docs, needs work for our context.
+   * @param {HttpErrorResponse} error Error to handle from http response.
+   */
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -682,45 +768,86 @@ export class EndpointService {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong,
       console.error(
-        &#x60;Backend returned code ${error.status}, &#x60; +
-        &#x60;body was: ${error.error}&#x60;);
+        &#x60;Backend returned code ${error.status}, &#x60; + &#x60;body was: ${error.error}&#x60;
+      );
     }
     // return an observable with a user-facing error message
-    return throwError(
-      &#x27;Something bad happened; please try again later.&#x27;);
+    return throwError(&#x27;Something bad happened; please try again later.&#x27;);
   }
 
+  /**
+   * Generic API request to create a given object.
+   *
+   * [TODO] Will eventually need to auth these requests somehow.
+   * @param {string} path Path from the base
+   * @param {any} newNoun New object to create.
+   * @returns Observable result of http POST.
+   */
   create(path: string, newNoun: any) {
-    const endpoint &#x3D; this.baseURL + ((this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27;) ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) + path;
+    const endpoint &#x3D;
+      this.baseURL +
+      (this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27; ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) +
+      path;
     const httpOptions &#x3D; {
-      // TODO: headers to eventually provide authentication...
+      // TODO: headers to eventually provide authentication for all GET&#x27;s and POST&#x27;s
       // headers: new HttpHeaders({
       //   &#x27;Content-Type&#x27;:  &#x27;application/json&#x27;,
-      //   &#x27;Authorization&#x27;: &#x27;my-auth-token&#x27;
+      //   &#x27;Authorization&#x27;: &#x27;my-auth-token&#x27;,
       // })
     };
 
-    return this.http.post&lt;any&gt;(endpoint, newNoun, httpOptions)
+    return this.http
+      .post&lt;any&gt;(endpoint, newNoun, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
+  /**
+   * Request all of a given type.
+   * @param {string} path API type path.
+   * @returns Observable result of http GET.
+   */
   readAll(path: string) {
-    const endpoint &#x3D; this.baseURL + ((this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27;) ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) + path;
+    const endpoint &#x3D;
+      this.baseURL +
+      (this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27; ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) +
+      path;
     return this.http.get(endpoint);
   }
 
+  /**
+   * Request a specific instance of a given type.
+   * @param {string} path API type path.
+   * @param {number} id ID of item to fetch.
+   * @returns Observable result of http GET.
+   */
   read(path: string, id: number) {
-    const endpoint &#x3D; this.baseURL + ((this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27;) ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) + path + id + &#x27;/&#x27;;
+    const endpoint &#x3D;
+      this.baseURL +
+      (this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27; ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) +
+      path +
+      id +
+      &#x27;/&#x27;;
     return this.http.get(endpoint);
   }
 
+  /**
+   * Update an existing instance of a given type.
+   * @param {string} path API type path.
+   * @param {number} id ID of item to update.
+   * @param {any} newNoun Updated item.
+   * @returns Observable result of http POST.
+   */
   update(path: string, id: number, newNoun: any) {
-    const endpoint &#x3D; this.baseURL + ((this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27;) ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) + path + id + &#x27;/&#x27;;
-    const httpOptions &#x3D; {
-      // TODO: headers to eventually provide authentication...
-    };
+    const endpoint &#x3D;
+      this.baseURL +
+      (this.port &#x3D;&#x3D; null || this.port &#x3D;&#x3D;&#x3D; &#x27;&#x27; ? &#x27;&#x27; : &#x60;:${this.port}&#x60;) +
+      path +
+      id +
+      &#x27;/&#x27;;
+    const httpOptions &#x3D; {};
 
-    return this.http.put&lt;any&gt;(endpoint, newNoun, httpOptions)
+    return this.http
+      .put&lt;any&gt;(endpoint, newNoun, httpOptions)
       .pipe(catchError(this.handleError));
   }
 }
