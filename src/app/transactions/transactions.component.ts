@@ -62,6 +62,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
     'bucket',
   ];
 
+  // tslint:disable max-line-length
   /**
    * [TODO] the below represent an approach to edit-in-place which figured maybe we could reuse a single instance of EditRowComponent for whichever transaction row is "active" for editing...still a viable idea, performance would suffer pretty fast in an implementation with an EditRowComponent for every row, active or not...need to flesh out.
    * */
@@ -146,7 +147,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
 
   /**
    * [TODO] on cell click, enable that data for editing?
-   * @param {any} cellData Table data from clicked cell.
+   * @param cellData Table data from clicked cell.
    */
   onCellClick(cellData: any) {
     console.log('cell click:', cellData);
@@ -154,7 +155,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
 
   /**
    * [TODO] implement the rest of this
-   * @param {Transaction} $event
+   * @param $event Event for an edit to a transaction.
    */
   receiveEditTransaction($event) {
     console.log('editing:', $event);
