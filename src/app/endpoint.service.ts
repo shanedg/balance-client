@@ -25,7 +25,7 @@ export class EndpointService {
 
   /**
    * [TODO] Lifted from angular docs, needs work for our context.
-   * @param {HttpErrorResponse} error Error to handle from http response.
+   * @param error Error to handle from http response.
    */
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -46,8 +46,8 @@ export class EndpointService {
    * Generic API request to create a given object.
    *
    * [TODO] Will eventually need to auth these requests somehow.
-   * @param {string} path Path from the base
-   * @param {any} newNoun New object to create.
+   * @param path Path from the base
+   * @param newNoun New object to create.
    * @returns Observable result of http POST.
    */
   create(path: string, newNoun: any) {
@@ -70,7 +70,7 @@ export class EndpointService {
 
   /**
    * Request all of a given type.
-   * @param {string} path API type path.
+   * @param path API type path.
    * @returns Observable result of http GET.
    */
   readAll(path: string) {
@@ -83,8 +83,8 @@ export class EndpointService {
 
   /**
    * Request a specific instance of a given type.
-   * @param {string} path API type path.
-   * @param {number} id ID of item to fetch.
+   * @param path API type path.
+   * @param id ID of item to fetch.
    * @returns Observable result of http GET.
    */
   read(path: string, id: number) {
@@ -99,9 +99,9 @@ export class EndpointService {
 
   /**
    * Update an existing instance of a given type.
-   * @param {string} path API type path.
-   * @param {number} id ID of item to update.
-   * @param {any} newNoun Updated item.
+   * @param path API type path.
+   * @param id ID of item to update.
+   * @param newNoun Updated item.
    * @returns Observable result of http POST.
    */
   update(path: string, id: number, newNoun: any) {

@@ -356,7 +356,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/app/transactions/transactions.component.ts:132</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/app/transactions/transactions.component.ts:133</a></div>
                             </td>
                         </tr>
 
@@ -425,7 +425,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/app/transactions/transactions.component.ts:130</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/app/transactions/transactions.component.ts:131</a></div>
                             </td>
                         </tr>
 
@@ -463,7 +463,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/app/transactions/transactions.component.ts:151</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">src/app/transactions/transactions.component.ts:152</a></div>
                             </td>
                         </tr>
 
@@ -534,7 +534,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="159" class="link-to-prism">src/app/transactions/transactions.component.ts:159</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="160" class="link-to-prism">src/app/transactions/transactions.component.ts:160</a></div>
                             </td>
                         </tr>
 
@@ -551,6 +551,7 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -562,6 +563,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Event for an edit to a transaction.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -751,6 +756,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
     &#x27;bucket&#x27;,
   ];
 
+  // tslint:disable max-line-length
   /**
    * [TODO] the below represent an approach to edit-in-place which figured maybe we could reuse a single instance of EditRowComponent for whichever transaction row is &quot;active&quot; for editing...still a viable idea, performance would suffer pretty fast in an implementation with an EditRowComponent for every row, active or not...need to flesh out.
    * */
@@ -835,7 +841,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
 
   /**
    * [TODO] on cell click, enable that data for editing?
-   * @param {any} cellData Table data from clicked cell.
+   * @param cellData Table data from clicked cell.
    */
   onCellClick(cellData: any) {
     console.log(&#x27;cell click:&#x27;, cellData);
@@ -843,7 +849,7 @@ export class TransactionsComponent implements OnChanges, OnInit {
 
   /**
    * [TODO] implement the rest of this
-   * @param {Transaction} $event
+   * @param $event Event for an edit to a transaction.
    */
   receiveEditTransaction($event) {
     console.log(&#x27;editing:&#x27;, $event);

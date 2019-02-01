@@ -155,8 +155,8 @@ export class QuickAddComponent implements OnInit {
    * Map account name back to Account object.
    *
    * [TODO] Refactor to avoid searching names list.
-   * @param {string} name Account name.
-   * @returns {Account} Account with the given name.
+   * @param name Account name.
+   * @returns Account with the given name.
    */
   private getAccount(name: string) {
     let account = null;
@@ -173,8 +173,8 @@ export class QuickAddComponent implements OnInit {
    * Map bucket name back to Bucket object.
    *
    * [TODO] Refactor to avoid searching names list.
-   * @param {string} name Bucket name.
-   * @returns {Bucket} Bucket with the given name.
+   * @param name Bucket name.
+   * @returns Bucket with the given name.
    */
   private getBucket(name: string) {
     let bucket = null;

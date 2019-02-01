@@ -299,7 +299,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/app.component.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/app.component.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -376,7 +376,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/app.component.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/app.component.ts:78</a></div>
                             </td>
                         </tr>
 
@@ -626,7 +626,7 @@ export class AppComponent implements OnInit {
   /**
    * App title.
    */
-  title: string &#x3D; &#x27;balance&#x27;;
+  title &#x3D; &#x27;balance&#x27;;
 
   /**
    * App transaction data, array of Transactions retrieved from API via injected &#x60;EndpointService&#x60;.
@@ -644,7 +644,7 @@ export class AppComponent implements OnInit {
   buckets: Bucket[];
 
   /**
-   * @param {EndpointService} endpointService Injected service for communicating with API endpoints.
+   * @param endpointService Injected service for communicating with API endpoints.
    */
   constructor(private endpointService: EndpointService) {}
 
@@ -669,8 +669,7 @@ export class AppComponent implements OnInit {
    * Pass new transaction to endpointService and subscribe to result.
    *
    * Important to treat &#x60;this.transactions&#x60; as immutable so that update triggers change detection correctly.
-   * @function receiveNewTransaction
-   * @param {Transaction} $event New transaction event.
+   * @param $event New transaction event.
    */
   receiveNewTransaction($event: Transaction) {
     this.endpointService
@@ -687,8 +686,7 @@ export class AppComponent implements OnInit {
    * Pass edited transaction to endpointService and subscribe to result.
    *
    * Important to treat &#x60;this.transactions&#x60; as immutable so that update triggers change detection correctly.
-   * @function receiveUpdatedTransaction
-   * @param {Transaction} $event Updated transaction event.
+   * @param $event Updated transaction event.
    */
   receiveUpdatedTransaction($event: Transaction) {
     this.endpointService

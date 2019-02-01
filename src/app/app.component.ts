@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   /**
    * App title.
    */
-  title: string = 'balance';
+  title = 'balance';
 
   /**
    * App transaction data, array of Transactions retrieved from API via injected `EndpointService`.
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   buckets: Bucket[];
 
   /**
-   * @param {EndpointService} endpointService Injected service for communicating with API endpoints.
+   * @param endpointService Injected service for communicating with API endpoints.
    */
   constructor(private endpointService: EndpointService) {}
 
@@ -56,8 +56,7 @@ export class AppComponent implements OnInit {
    * Pass new transaction to endpointService and subscribe to result.
    *
    * Important to treat `this.transactions` as immutable so that update triggers change detection correctly.
-   * @function receiveNewTransaction
-   * @param {Transaction} $event New transaction event.
+   * @param $event New transaction event.
    */
   receiveNewTransaction($event: Transaction) {
     this.endpointService
@@ -74,8 +73,7 @@ export class AppComponent implements OnInit {
    * Pass edited transaction to endpointService and subscribe to result.
    *
    * Important to treat `this.transactions` as immutable so that update triggers change detection correctly.
-   * @function receiveUpdatedTransaction
-   * @param {Transaction} $event Updated transaction event.
+   * @param $event Updated transaction event.
    */
   receiveUpdatedTransaction($event: Transaction) {
     this.endpointService
